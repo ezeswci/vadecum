@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="cordova.js" type="text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RCP</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+	<link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+	<script src="js/main.js"></script>
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/fibrilacion.css" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css?33">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <script src="js/menu.js"></script>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+          <nav class="navbar navbar-default navbar-fixed-top" >
+                <button type="button" style="margin:7px;" class="btn btn-default btn-lg" onClick="cambiarPagina('pediatria.html');">&lsaquo; Volver</button>
+                <a class="btn btn-default ui-link" style="border:none;position: absolute;left: 50%;transform: translate(-50%, 0);"><img src="img/simmer_logo.png" width="54" height="47" style="display:inline-block;"></a>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="border:none;float:right;"><img src="img/menu.png" width="52" height="47"style="display:inline-block;"></a>
+            </nav>
+
+        <div class="container-fluid">
+                <div class="row">
+					<div class="col-lg-12">
+						<div id="muestra_texto">
+                            <div data-role="content">
+                                <h1 class="txt-green txt-sector" style="font-size:1.9em">Adultos</h1>
+                                <h2>
+                                  <div class="input-line">
+                                    <label for="orden" style="margin-top: 9px;">ORDEN:</label>
+                                      <div class="input-switch drogas" style="width: 70%;max-width: 80%;">
+                                          <select name="orden" id="order">
+                                              <option value="1"> Nombre comercial </option>
+                                              <option value="2"> Drogra / Principio activo </option>
+                                              <option value="3"> Grupo terapéutico </option>
+                                              <option value="4"> Presentación </option>
+                                          </select>
+                                      </div>
+                                </h2>
+                                <form id="initCal">
+                                    <div class="input-line">
+                                        <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
+                                            <select name="sel-type" id="sel-type">
+                                            <option value="0" selected="selected">Droga</option>
+                                            <option value="1">Acalix</option>
+                                            <option value="1">Acalix AP</option>
+                                            <option value="1">Acalix CD</option>
+                                            <option value="1">Acalix Cronos</option>
+                                            <option value="1">Amoxidal</option>
+                                            <option value="1">Amoxidal Dúo</option>
+                                            <option value="1">Amoxidal Dúo Muc</option>
+                                            <option value="1">Amoxidal Respiratorio</option>
+                                            <option value="1">Amoxidal Respiratorio Dúo</option>
+                                            <option value="1">Atentto</option>
+                                            <option value="1">Asertral</option>
+                                            <option value="1">Athos</option>
+                                            <option value="1">Athos B</option>
+                                            <option value="1">Atisenap</option>
+                                            <option value="1">Atlansil</option>
+                                            <option value="1">Bronax</option>
+                                            <option value="1">Bronax CB</option>
+                                            <option value="1">Bronax Cort</option>
+                                            <option value="1">Bronax Flex</option>
+                                            <option value="1">Bronax GL</option>
+                                            <option value="1">Calciraquiferol</option>
+                                            <option value="1">Ciriax</option>
+                                            <option value="1">Ciriax Otic</option>
+                                            <option value="1">Ciriax Otic L</option>
+                                            <option value="1">Complegel Novo</option>
+                                            <option value="1">Complegel Vascular</option>
+                                            <option value="1">Corbis</option>
+                                            <option value="1">Corbis D</option>
+                                            <option value="1">Corpres</option>
+                                            <option value="1">Decidex</option>
+                                            <option value="1">Decidex Compuesto</option>
+                                            <option value="1">Decidex Compuesto Grip</option>
+                                            <option value="1">Decidex Grip</option>
+                                            <option value="1">Decidex Plus</option>
+                                            <option value="1">Dexopral</option>
+                                            <option value="1">Diondel</option>
+                                            <option value="1">Doricoxib</option>
+                                            <option value="1">Dorixina</option>
+                                            <option value="1">Dorixina B1 B6 B12 </option>
+                                            <option value="1">Dorixina Forte NF </option>
+                                            <option value="1">Dorixina Relax</option>
+                                            <option value="1">Elbrus</option>
+                                            <option value="1">Endial</option>
+                                            <option value="1">Endial Met</option>
+                                            <option value="1">Febratic</option>
+                                            <option value="1">Febratic 4%</option>
+                                            <option value="1">Febratic 400</option>
+                                            <option value="1">Frenaler</option>
+                                            <option value="1">Frenaler Cort</option>
+                                            <option value="1">Frenaler D</option>
+                                            <option value="1">Glucal</option>
+                                            <option value="1">Inductal</option>
+                                            <option value="1">Invictus</option>
+                                            <option value="1">Irazem</option>
+                                            <option value="1">Ixacor</option>
+                                            <option value="1">Ixium </option>
+                                            <option value="1">Ixium 100</option>
+                                            <option value="1">Lanoxin</option>
+                                            <option value="1">Lanzopral</option>
+                                            <option value="1">Laragon 150</option>
+                                            <option value="1">Lexobrón</option>
+                                            <option value="1">Lidil</option>
+                                            <option value="1">Lidil Cort</option>
+                                            <option value="1">Lidil Spray</option>
+                                            <option value="1">Losacor</option>
+                                            <option value="1">Losacor A</option>
+                                            <option value="1">Losacor D</option>
+                                            <option value="1">Losacor D </option>
+                                            <option value="1">Lotrial</option>
+                                            <option value="1">Lotrial D</option>
+                                            <option value="1">Lotrial D 20 </option>
+                                            <option value="1">Lotrial Vas</option>
+                                            <option value="1">Medocor</option>
+                                            <option value="1">Medocor AP</option>
+                                            <option value="1">Meleril</option>
+                                            <option value="1">Merital</option>
+                                              <option value="1">Meridian</option>
+                                            <option value="1">Mestinon </option>
+                                            <option value="1">Mestinon Ts</option>
+                                            <option value="1">Micolis novo</option>
+                                            <option value="1">Micolis Novo</option>
+                                            <option value="1">Microsona </option>
+                                            <option value="1">Microsona BB </option>
+                                            <option value="1">Microsona C</option>
+                                            <option value="1">Migra Dorixina </option>
+                                            <option value="1">Nixorán</option>
+                                            <option value="1">Oldrén </option>
+                                            <option value="1">Optamox </option>
+                                            <option value="1">Optamox Dúo</option>
+                                            <option value="1">Optamox Dúo 14 1 </option>
+                                            <option value="1">Optamox Respiratorio Dúo</option>
+                                            <option value="1">Ostelin ACD </option>
+                                            <option value="1">Ostelin F </option>
+                                            <option value="1">Ostelin P100 </option>
+                                            <option value="1">Plénica</option>
+                                            <option value="1">Plénica 75   </option>
+                                            <option value="1">Plidán </option>
+                                            <option value="1">Plidex </option>
+                                            <option value="1">Plidex AP</option>
+                                            <option value="1">Plidex S</option>
+                                            <option value="1">Plidex T </option>
+                                            <option value="1">Poviral </option>
+                                            <option value="1">Procardia </option>
+                                            <option value="1">Raquiferol  </option>
+                                            <option value="1">Raquiferol D3</option>
+                                            <option value="1">Rogastril </option>
+                                            <option value="1">Rogastril Plus</option>
+                                            <option value="1">Rovartal</option>
+                                            <option value="1">Sertal </option>
+                                            <option value="1">Sertal Compuesto </option>
+                                            <option value="1">Sesaren </option>
+                                            <option value="1">Sesaren XR </option>
+                                            <option value="1">Taural</option>
+                                            <option value="1">Taural Plus </option>
+                                            <option value="1">Termofrén</option>
+                                            <option value="1">Vasotenal</option>
+                                            <option value="1">Vasotenal EZ</option>
+                                            <option value="1">Vimax </option>
+                                            <option value="1">Vintix </option>
+                                            <option value="1">Vitalix </option>
+                                            <option value="1">Vitalix Complex </option>
+                                            <option value="1">Zentius </option>
+                                            </select>
+                                        </div>
+                                        <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type">.</label></div>
+                                   </div>
+                                   <div class="input-line" id="selop-2" style="display:none;">
+                                        <div class="input-switch">
+                                            <select name="sel-type-2" id="sel-type-2">
+                                                <option value="0">---</option>
+                                                <option value="1">Acalix 25 Inyectable</option>
+                                                <option value="2">Acalix 60 comprimidos</option>
+                                                <option value="3">Acalix 90 comprimidos</option>
+                                                <option value="4">Acalix 120 comprimidos</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-label"><label for="sel-type">Presentaciones: </label></div>
+                                   </div>
+                                </form>
+                                <div class="result_frame" id="result-container" style="display:none;">
+                                    <div class="result_container" style="min-width:220px;width: 100%;">
+                                        <div class="result_title" style="color:#333333;">Posología y forma de administración</div>
+                                        </br>
+                                        <div id="situacion" style=" text-align:left;color: #6a6a6a;">
+
+                                        </div>
+                                    </div>
+                                <!-- /result_frame -->
+                                </div>
+                            <!-- /content -->
+                            </div>
+                        <!-- /muestra_texto -->
+                        </div>
+                      <!-- /col-lg-12 -->
+                   </div>
+                    <!-- ./row -->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- id-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	<!-- Propios -->
+	<script src="js/cambiarPagina.js"></script>
+	<script src="js/cambiarCalculadora.js"></script>
+
+    <!-- jQuery
+    <script src="js/jquery.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- Calculadora -->
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+	function result_initCal() {
+		var seltype=document.getElementById("sel-type").value; // El tipo seleccionado
+		if(seltype=="0"){// Opcion si eligio esto
+			document.getElementById("selop-2").style.display="none";
+			document.getElementById("result-container").style.display="none";
+		}
+		if(seltype==1){// Opcion si eligio esto
+			document.getElementById("selop-2").style.display="block";
+			document.getElementById("result-container").style.display="none";
+			var seltype2=document.getElementById("sel-type-2").value;
+			if(seltype2==1){// Endovenosa
+				document.getElementById("result-container").style.display="block";
+				insert= 'Acalix 25 Inyectable debe administrarse con precaución en eltratamiento de las arritmias cuando el paciente presente compromiso hemodinámico o se encuentre en tratamiento con drogas que disminuyanla resistencia periférica, la contractilidad miocárdica o la propagación del impulso eléctrico en el miocardio.';
+        insert+=' En todas las indicaciones y particularmente cuando se emplee la infusión intravenosa continua, la atención debe incluir monitoreo electrocardiográfico continuo y control frecuente de la presión arterial. Además, es conveniente contar con desfibrilador y equipo de emergencia.';
+        insert+='Vía intravenosa: Dosis de carga: 0,3 mg/kg, lentamente (en “bolo”) durante 2 a 3 minutos. Esta dosis puede repetirse a los 30 minutos. En los casos en que fueranecesario se pasará a la “Dosis de mantenimiento”. ';
+        insert+='Dosis de mantenimiento (mediante venoclisis gota a gota): 0,2 a1 mg/min (2,8 a 14 mg/kg/min, es decir 0,0028 a 0,014 mg/kg/min)por venoclisis. La dosis intravenosa de Acalix 25 Inyectable no debe superar los300 mg/día.En las crisis hipertensivas, en la hipertensión grave que requieretratamiento inmediato, puede ser administrado en dosis de 0,3 a0,5 mg/kg, lentamente (“en bolo”), produciendo un descenso tensionalque dura entre 1 a 3 horas, por lo que es preferible la infusión intravenosacontinua,';
+        insert+=' en dosis de 5 a 40 µg/kg/min (0,005 a 0,040 mg/kg/min),vigilando estrechamente la aparición de arritmias (habitualmentereversibles en cuanto se suspende o reduce la perfusión).Si bien Acalix 25 Inyectable suele utilizarse en tratamientos breves,de acuerdo a la patología del paciente puede administrarse durantevarios días.Debido a posibles incompatibilidades físicas no debe mezclarseAcalix 25 Inyectable en solución con otras drogas y, de ser posible,debe evitarse la co-infusión con otras drogas a través de la mismatubuladura. ';
+        insert+='Emplear solamente solución o mezclas con soluciones para venoclisisrecién preparadas. Excepcionalmente, podría utilizarse una solución mantenida atemperatura ambiente hasta 24 horas después de su preparación. ';
+        insert+= 'Vía intracoronaria:Dosis: 1 a 2 mg, lentamente (“en bolo”). La dosis intracoronaria deAcalix 25 Inyectable no debe superar los 3 mg.Forma de preparación:Disolver el contenido del frasco ampolla con el medio de soluciónadjunto y agitar brevemente.';
+        insert+='Esta solución puede inyectarse directamente o diluirse en soluciónde cloruro de sodio, de dextrosa, de levulosa, de Ringer lactato o deexpansores plasmáticos. ';
+        insert+='La técnica para abrir las ampollas OPC es la siguiente:1. Tomar la ampolla para abrirla, como se hace habitualmente con lasampollas con cinta de color.2. Colocar la ampolla de modo que el punto de referencia quede defrente al operador.3. Hacer el movimiento de apertura hacia adelante, alejándose del cuerpodel operador, como es habitual al abrir las ampollas con cinta de color.';
+			}
+		}
+		$('#situacion').html(insert);
+
+	}
+	function roundUp(num) {
+		// return Math.round(num);
+	  num=Math.round(num * 10);
+	  if((num%10)>0){
+	  	return parseInt(num/10)+','+num%10;
+	  }else{
+		 return parseInt(num/10);
+	  }
+	}
+	$(function () {
+		$('#initCal').off('change').on('change', result_initCal);
+		result_initCal();
+	});
+    </script>
+  <script>
+/*document.addEventListener('deviceready', function () {
+    // Analytics para club House
+	window.analytics.startTrackerWithId('UA-70907455-2');// Analytics para Fa Respuestas
+	window.analytics.trackView('Pantalla Calculadora Clearence de creatinina');
+}, false);*/
+</script>
+
+
+</body>
+<link href="plugins/dialog-master/css/bootstrap-dialog.css" rel="stylesheet" type="text/css" />
+<script src="plugins/dialog-master/js/bootstrap-dialog.js?190417"></script>
+
+</html>

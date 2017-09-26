@@ -24,7 +24,7 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="css/fibrilacion.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css?33">
-   
+
 
 </head>
 
@@ -33,25 +33,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul>
-                <li class="calculadora txt-blue" style="text-align: center; font-size:12px; color:#007C9A;background: #cde0e5;">NEONATOLOGÍA</li>
-                <li class="calculadora"><a href="#" onClick="cambiarCalculadora('neonatologia_acciones.html');">Intervenciones en RCP </a></li>
-                <li class="calculadora"><a href="#" onClick="cambiarCalculadora('neonatologia_drogas.html');">Drogas</a></li>
-                <li class="algoritmo txt-green" style="text-align: center;font-size:12px; color:#04142b ;background: #b6bcce;">PEDIATRÍA</li>
-                <li class="algoritmo"><a href="#" onClick="cambiarCalculadora('pediatria_acciones.html');">Intervenciones en RCP </a></li>
-                <li class="algoritmo"><a href="#" onClick="cambiarCalculadora('pediatria_drogas.html');">Drogas</a></li> 
-                <li class="algoritmo"><a href="#" onClick="cambiarCalculadora('pediatria_glasgow.html');">Glasgow</a></li>
-                <li style="text-align: center; color:#1a53a5;font-size:12px; color:#665b00; background:#fafafa;">OTROS</li>      
-                <li><a onClick="cambiarCalculadora('situaciones.html');">Situaciones de uso</a></li>
-                <li><a onClick="cambiarCalculadora('autores.html');">Autores</a></li> 
-                <li><a onClick="cambiarCalculadora('bibliografia.html');">Bibliografía</a></li>
-                <li><a onClick="cambiarCalculadora('sugerencias.html');">Sugerencias y comentarios</a></li>
-                <li><a onClick="cambiarCalculadora('terminos.html');">Términos y condiciones</a></li>
-                <li><a onClick="cambiarCalculadora('privacidad.html');">Política de privacidad</a></li>
-                <li><a onClick="cambiarCalculadora('copyright.html');">Derecho de autor</a></li>
-            </ul>
-        </div>
+        <script src="js/menu.js"></script>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -66,10 +48,12 @@
 <div class="col-lg-12">
 		<div id="muestra_texto">
             <div data-role="content">
-                <h1 class="txt-green txt-sector" style="font-size:1.9em">Pediatría</h1>
-                <button type="button" class="btn btn-primary btn-lg btn-reg" onClick="cambiarPagina('pediatria_acciones.html');">Intervenciones en RCP</button>
-                <button type="button" class="btn btn-primary btn-lg btn-reg" onClick="cambiarPagina('pediatria_drogas.html');">Drogas</button>
-                <button type="button" class="btn btn-primary btn-lg btn-reg" onClick="cambiarPagina('pediatria_glasgow.html');">Glasgow</button>
+                <h1 class="txt-green txt-sector" style="font-size:1.9em">Adultos</h1>
+                <h4>Ordenar busqueda por:</h4>
+                <button type="button" class="btn btn-primary btn-lg btn-reg" style="margin-top:5px;" onClick="cambiarPagina('adultos_drogas.html?op=1');">Nombre comercial</button>
+                <button type="button" class="btn btn-primary btn-lg btn-reg" onClick="cambiarPagina('adultos_drogas.html?op=2');">Drogra / Principio activo</button>
+                <button type="button" class="btn btn-primary btn-lg btn-reg" onClick="cambiarPagina('adultos_drogas.html?op=3');">Grupo terapéutico</button>
+                <button type="button" class="btn btn-primary btn-lg btn-reg" onClick="cambiarPagina('adultos_drogas.html?op=4');">Presentación</button>
             </div>
 		</div><!-- /content -->
 
@@ -90,7 +74,7 @@
 	<script src="js/cambiarPagina.js"></script>
 	<script src="js/cambiarCalculadora.js"></script>
 
-    <!-- jQuery 
+    <!-- jQuery
     <script src="js/jquery.js"></script>-->
 
     <!-- Bootstrap Core JavaScript -->
@@ -110,9 +94,9 @@
 	window.analytics.startTrackerWithId('UA-70907455-2');// Analytics para Fa Respuestas
 	window.analytics.trackView('Pantalla Calculadora Clearence de creatinina');
 }, false);*/
-</script>  
-    
-    
+</script>
+
+
 </body>
 <link href="plugins/dialog-master/css/bootstrap-dialog.css" rel="stylesheet" type="text/css" />
 <script src="plugins/dialog-master/js/bootstrap-dialog.js?190417"></script>
