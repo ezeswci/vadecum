@@ -364,34 +364,8 @@
     function abrirProspecto(){
       var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
       alert("Abre prospecto: "+src);
-      var options = {
-            documentView: {
-                closeLabel: "Fertig"
-            },
-            navigationView: {
-                closeLabel: "Zurück"
-            },
-            email: {
-                enabled: false
-            },
-            print: {
-                enabled: true
-            },
-            openWith: {
-                enabled: false
-            },
-            bookmarks: {
-                enabled: false
-            },
-            search: {
-                enabled: false
-            },
-            autoClose: {
-                onPause: false
-            }
-          };
-          var mimeType = { pdf: 'application/pdf'};
-      cordova.plugins.SitewaertsDocumentViewer.viewDocument(src, mimeType, options, onShow, onClose, onMissingApp, onError);
+      window.open(src,'_system');
+      //cordova.plugins.SitewaertsDocumentViewer.viewDocument(src, mimeType, options, onShow, onClose, onMissingApp, onError);
     }
     function onShow(){
       //e.g. track document usage
