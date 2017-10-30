@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="cordova.js" type="text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RCP</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+	<link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+	<script src="js/main.js"></script>
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/fibrilacion.css" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css?33">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <script src="js/menu.js"></script>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+        	<nav class="navbar navbar-default navbar-fixed-top" >
+            	<button type="button" style="margin:7px;" class="btn btn-default btn-lg" onClick="cambiarPagina('neonatologia.html');">&lsaquo; Volver</button>
+                <a class="btn btn-default ui-link" style="border:none;position: absolute;left: 50%;transform: translate(-50%, 0);"><img src="img/simmer_logo.png" width="54" height="47" style="display:inline-block;"></a>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="border:none;float:right;"><img src="img/menu.png" width="52" height="47"style="display:inline-block;"></a>
+            </nav>
+
+        <div class="container-fluid">
+                <div class="row">
+					<div class="col-lg-12">
+						<div id="muestra_texto">
+                            <div data-role="content">
+                                <h1 class="txt-blue txt-sector" style="font-size:1.9em">Niños</h1>
+                                <h2>
+                                  <div class="input-line">
+                                    <label for="orden" style="margin-top: 9px;">ORDEN:</label>
+                                      <div class="input-switch drogas" style="width: 70%;max-width: 80%;">
+                                          <select name="orden" id="order">
+                                              <option value="1"> Nombre comercial </option>
+                                              <option value="2"> Drogra / Principio activo </option>
+                                              <option value="3"> Grupo terapéutico </option>
+                                              <option value="4"> Presentación </option>
+                                          </select>
+                                      </div>
+                                </h2>
+                                <form id="initCal">
+                                    <div class="input-line">
+                                        <div data-role="fieldcontain">
+                                            <label for="peso">Peso (Kg)</label>
+                                            <input type="range" name="peso" id="peso" value="0" min="2" max="40"  step="0.1">
+                                        </div>
+                                    </div>
+                                    <div class="input-line">
+                                        <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
+                                            <select name="sel-type" id="sel-type">
+                                                <option value="0"> Droga </option>
+                                            </select>
+                                        </div>
+                                        <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type">.</label></div>
+                                   </div>
+                                 </form>
+                                   <form id="initCal2">
+                                   <div class="input-line" id="selop-2" style="display:none;">
+                                        <div class="input-switch">
+                                            <select name="sel-type-2" id="sel-type-2">
+                                                <script>
+                                                for(var i=5;i<=120;i=i+5){
+                                                  document.write('<option value="'+i+'">'+i+' (mg / Kg / día)</option>');
+                                                }
+                                                </script>
+
+                                            </select>
+                                        </div>
+                                        <div class="input-label"><label for="sel-type">Dosis requerida:  </label></div>
+                                   </div>
+                                   <!-- // Dosis requerida: XX (mg / Kg / día)
+                                   // Dosis cada XX horas
+                                   // Duración del tratamiento XX Días -->
+                                   <div class="input-line" id="selop-3" style="display:none;">
+                                        <div class="input-switch">
+                                            <select name="sel-type-3" id="sel-type-3">
+                                                <option value="6">6 Horas</option>
+                                                <option value="8">8 Horas</option>
+                                                <option value="12">12 Horas</option>
+                                                <option value="24">24 Horas</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-label"><label for="sel-type">Dosis cada: </label></div>
+                                   </div>
+                                   <div class="input-line" id="selop-4" style="display:none;">
+                                        <div class="input-switch">
+                                            <select name="sel-type-4" id="sel-type-4">
+                                                <option value="3">3 Días</option>
+                                                <option value="5">5 Días</option>
+                                                <option value="7">7 Días</option>
+                                                <option value="10">10 Días</option>
+                                                <option value="14">14 Días</option>
+                                                <option value="21">21 Días</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-label"><label for="sel-type"> Duración del tratamiento: </label></div>
+                                   </div>
+
+
+                                </form>
+                                <div class="result_frame" id="result-container" style="display:none;">
+                                    <div class="result_container" style="min-width:220px;width: 100%;">
+                                        <div class="result_title" style="color:#333333;">Resultados</div>
+                                        </br>
+                                        <div id="situacion" style=" text-align:left;color: #6a6a6a;">
+
+                                        </div>
+                                    </div>
+                                <!-- /result_frame -->
+                                </div>
+                            <!-- /content -->
+                            </div>
+                        <!-- /muestra_texto -->
+                        </div>
+                      <!-- /col-lg-12 -->
+                   </div>
+                    <!-- ./row -->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- id-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	<!-- Propios -->
+	<script src="js/cambiarPagina.js"></script>
+	<script src="js/cambiarCalculadora.js"></script>
+
+    <!-- jQuery
+    <script src="js/jquery.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- Calculadora -->
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    // orden
+    setTimeout(function(){checkOrder();},500);
+    function checkOrder(){
+    	if(getQueryVariableTranslated("op")!=-1){
+        $("#order").val(getQueryVariableTranslated("op")).change();
+    	}
+      showInOrder();
+    }
+    function getQueryVariableTranslated(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+          return pair[1];
+        }
+      }
+      return -1;
+    }
+    // Fin orden
+  // Ordenar drogas
+  function showInOrder(){
+    var drogas=[{"value":1,"nombre":"Amoxidal 250","droga":"Amoxicilina","grupo":"","presentacion":""},{"value":2,"nombre":"Amoxidal 500","droga":"Amoxicilina","grupo":"","presentacion":""},{"value":3,"nombre":"Amoxidal Dúo","droga":"Amoxicilina","grupo":"","presentacion":""},{"value":4,"nombre":"Amoxidal Respiratorio Dúo","droga":"Amoxicilina + ambroxol","grupo":"","presentacion":""},{"value":5,"nombre":"Amoxidal respiratorio","droga":"Amoxicilina + ambroxol","grupo":"","presentacion":""},{"value":6,"nombre":"Nixoran","droga":"Nitazoxanida","grupo":"","presentacion":""},{"value":7,"nombre":"Optamox suspensión lactantes","droga":"Amoxicilina - Ac. clavulánico","grupo":"","presentacion":""},{"value":8,"nombre":"Optamox suspensión pediátrica","droga":"Amoxicilina - Ac. clavulánico","grupo":"","presentacion":""},{"value":9,"nombre":"Optamox dúo","droga":"Amoxicilina - Ac. clavulánico","grupo":"","presentacion":""},{"value":10,"nombre":"Poviral","droga":"Aciclovir","grupo":"","presentacion":""},{"value":11,"nombre":"Decidex","droga":"Clorfeniramina + pseudoefedrina","grupo":"","presentacion":"Solución"},{"value":12,"nombre":"Ostelin ACD","droga":"Vitaminas ACD","grupo":"","presentacion":"Gotas"},{"value":13,"nombre":"Ostelín F","droga":"Vitamina ADC + Flúor","grupo":"","presentacion":"Gotas"},{"value":14,"nombre":"Vitalix","droga":"Hierro polimaltosato","grupo":"","presentacion":"Gotas"},{"value":15,"nombre":"Febratic","droga":"ibuprofeno","grupo":"","presentacion":"Suspensión"},{"value":16,"nombre":"Febratic 4%","droga":"Ibuprofeno","grupo":"","presentacion":"Suspensión"},{"value":17,"nombre":"Termofren","droga":"Paracetamol","grupo":"","presentacion":"Gotas"},{"value":18,"nombre":"Termofren","droga":"Paracetamol","grupo":"","presentacion":"Solución"},{"value":19,"nombre":"Ostelín P100","droga":"Vitamína D","grupo":"","presentacion":"Gotas"},{"value":20,"nombre":"Taural","droga":"Ranitidina","grupo":"","presentacion":"Suspensión"}];
+    drogas.sort(function (a, b) {
+                          if (a.nombre > b.nombre) {
+                            return 1;
+                          }
+                          if (a.nombre < b.nombre) {
+                            return -1;
+                          }
+                          // a must be equal to b
+                          return 0;
+                        });
+    for(droga in drogas)
+    {
+      $("#sel-type").append('<option value=' + drogas[droga].value + '>' +  drogas[droga].nombre + '</option>');
+    }
+  }
+  // End
+	function result_initCal() {
+    // Como ver si lo que cambio fue el sel-type y cambiar todo a partir de eso!
+		var seltype=document.getElementById("sel-type").value; // El tipo seleccionado
+		var peso=parseFloat(document.getElementById("peso").value);
+		var insert='';
+		if(seltype=="0"){// Opcion si eligio esto
+			document.getElementById("selop-2").style.display="none";
+      document.getElementById("selop-3").style.display="none";
+      document.getElementById("selop-4").style.display="none";
+			document.getElementById("result-container").style.display="none";
+		}
+    if(seltype==1 && peso>=0.2){// Opcion si eligio esto: Amoxidal 250
+			document.getElementById("result-container").style.display="block";
+      document.getElementById("selop-2").style.display="block";
+      document.getElementById("selop-3").style.display="block";
+      document.getElementById("selop-4").style.display="block";
+      $("#sel-type-2").val(80).change();
+      $("#sel-type-3").val(12).change();
+      $("#sel-type-4").val(7).change();
+      /* sel-type-4 */
+			var dosis=peso*10;
+      var horas=$("#sel-type-3").val();
+      var dosis_total=peso*100;
+      var envase='Conveniente Amoxidal 500';
+      insert+='<b>Marca:</b> Amoxidal 250</br>';
+      insert+='<b>ATB: </b>Amoxicilina</br>';
+			insert+='Para niños de <b>'+peso+' kg</b></br>';
+      insert+='<b>Dosis requerida: </b> '+$("#sel-type-2").val()+' (mg / Kg / día)</br>';
+      //insert+='<b>Dosis cada: </b> '+$("#sel-type-3").val()+' horas</br>';
+      insert+='<b>Duración del tratamiento: </b> '+$("#sel-type-4").val()+' días</br>';
+      insert+='<b>Presentación: </b> 250 mg, 5 ml</br>';
+			insert+='<span style="font-size: 1.5em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 15px;"><b>Administrar: </b>'+dosis+' ml <small>cada '+horas+' horas </small></br></span>';
+      insert+='<b>Total tratamiento: </b> '+dosis_total+' ml</br>';
+      insert+='<b>Envase a utilizar: </b> '+envase+'</br>';
+		}
+		$('#situacion').html(insert);
+
+	}
+	function roundUp(num) {
+		// return Math.round(num);
+	  num=Math.round(num * 10);
+	  if((num%10)>0){
+	  	return parseInt(num/10)+','+num%10;
+	  }else{
+		 return parseInt(num/10);
+	  }
+	}
+	$(function () {
+		$('#initCal').off('change').on('change', result_initCal);
+		result_initCal();
+	});
+    </script>
+  <script>
+/*document.addEventListener('deviceready', function () {
+    // Analytics para club House
+	window.analytics.startTrackerWithId('UA-70907455-2');// Analytics para Fa Respuestas
+	window.analytics.trackView('Pantalla Calculadora Clearence de creatinina');
+}, false);*/
+</script>
+
+
+</body>
+<link href="plugins/dialog-master/css/bootstrap-dialog.css" rel="stylesheet" type="text/css" />
+<script src="plugins/dialog-master/js/bootstrap-dialog.js?190417"></script>
+
+</html>

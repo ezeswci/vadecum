@@ -16,7 +16,7 @@ body * {
 	body {
   		zoom: 85%;
 		}
-	
+
 	}
 strong, b {
 	font-weight: bold !important;
@@ -315,7 +315,7 @@ div.input-radio fieldset.ui-controlgroup.ui-mini {
 		padding-right: 5%;
 	}
 	/* wrap on wide viewports once open */
-	
+
 	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-push.ui-panel-content-fixed-toolbar-position-left,
 	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal.ui-panel-content-fixed-toolbar-position-left,
 	.ui-page-panel-open .ui-panel-content-wrap-display-push.ui-panel-content-wrap-position-left,
@@ -332,7 +332,7 @@ div.input-radio fieldset.ui-controlgroup.ui-mini {
 	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal {
 		width: auto;
 	}
-	
+
 	/* disable "dismiss" on wide viewports */
 	.ui-panel-dismiss {
 		display: none;
