@@ -362,8 +362,9 @@
       $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentacion: </b>'+presentacion+'</p><p style="text-align: left;"><b style=" color: blue;" onclick="abrirProspecto();">Abrir prospecto</b></p><h2>Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div></div>');
     }
     function abrirProspecto(){
-      var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto
+      var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
       alert("Abre prospecto: "+src);
+      cordova.InAppBrowser.open(src);
     }
     function hideToBottom(nro){
       for(nro;nro<5;nro++){

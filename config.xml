@@ -2,7 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.vademecum"
-        version   = "3.3.0">
+        android-versionCode="100"
+        version   = "1.0.0">
 
     <name>Vademecum</name>
 
@@ -34,7 +35,7 @@
 	<!-- Record Audio -->
 	<!-- Core plugins -->
     <plugin name="com.cmackay.plugins.googleanalytics" source="npm" />
-
+    <plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<!-- Define app icon for each platform. -->
 	<icon src="img/icon.png" />
   <splash src="img/splash.png"/>
