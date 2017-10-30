@@ -364,7 +364,34 @@
     function abrirProspecto(){
       var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
       alert("Abre prospecto: "+src);
-      cordova.plugins.SitewaertsDocumentViewer.viewDocument(src, mimeType, options, onShow, onClose, onMissingApp, onError, linkHandlers);
+      var options = {
+            documentView: {
+                closeLabel: "Fertig"
+            },
+            navigationView: {
+                closeLabel: "Zurück"
+            },
+            email: {
+                enabled: false
+            },
+            print: {
+                enabled: true
+            },
+            openWith: {
+                enabled: false
+            },
+            bookmarks: {
+                enabled: false
+            },
+            search: {
+                enabled: false
+            },
+            autoClose: {
+                onPause: false
+            }
+          };
+          var mimeType = { pdf: 'application/pdf'};
+      cordova.plugins.SitewaertsDocumentViewer.viewDocument(src, mimeType, options, onShow, onClose, onMissingApp, onError);
     }
     function onShow(){
       //e.g. track document usage
@@ -372,6 +399,9 @@
     function onClose(){
       //e.g. track document usage
       }
+      function onError(){
+        //e.g. track document usage
+        }
       function onMissingApp(appId, installer)
       {
           if(confirm("Do you want to install the free PDF Viewer App "
