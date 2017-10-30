@@ -364,7 +364,7 @@
     function abrirProspecto(){
       var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
       alert("Abre prospecto: "+src);
-      cordova.InAppBrowser.open(src);
+      cordova.InAppBrowser.open(src, '_blank');
     }
     function hideToBottom(nro){
       for(nro;nro<5;nro++){
