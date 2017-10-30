@@ -400,11 +400,9 @@
       return Math.round( number * 10 ) / 10;
     }
     function abrirProspecto(){
-      var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto
+      var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
       alert("Abre prospecto: "+src);
-      window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-      alert("Abre prospecto: "+window.requestFileSystem.root.fullPath+src);
-      cordova.InAppBrowser.open(window.requestFileSystem.root.fullPath+src, '_system');
+      cordova.InAppBrowser.open(src, '_system');
       //window.open(src,'_blank');
       //PDFViewer.openPDF(src);
     }
