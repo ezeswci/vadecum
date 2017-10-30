@@ -364,7 +364,10 @@
     function abrirProspecto(){
       var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
       alert("Abre prospecto: "+src);
-      window.open(src,'_system');
+      window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+      alert("Abre prospecto: "+window.requestFileSystem.root.fullPath+src);
+      cordova.InAppBrowser.open(window.requestFileSystem.root.fullPath+src, '_system');
+      window.open(window.requestFileSystem.root.fullPath+src,'_system');
       //cordova.plugins.SitewaertsDocumentViewer.viewDocument(src, mimeType, options, onShow, onClose, onMissingApp, onError);
     }
     function onShow(){
