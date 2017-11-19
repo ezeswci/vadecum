@@ -111,6 +111,19 @@
                                               <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type" class="ui-select">.</label></div>
                                           </div>
                                         </form>
+                                        <div class="input-line" id="selop-5" style="display:none;">
+                                          <label for="orden" style="margin-top: 9px;" id="lab-type5"></label>
+                                            <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
+                                              <div class="ui-select">
+                                                <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right">
+                                                  <select name="sel-type5" id="sel-type5">
+
+                                                  </select>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type" class="ui-select">.</label></div>
+                                        </div>
                                         <div class="result_frame" id="result-container" style="display:none;">
                                             <!-- /result_frame -->
                                         </div>
@@ -298,6 +311,70 @@
         }
       }
     }
+    // Para editar
+    // Dosis: window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida
+    // cada_administrar = window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch
+    // dias de tratamiento = window.posibleOptions[0].productos[0].presentaciones[0].dias_trat
+    // sel-type4
+    function editarDosisHoras(){
+      $("#lab-type5").html("Editar Horas:");
+      $("#selop-5").css("display", "block");
+      $("#sel-type5").unbind();
+      $("#sel-type5").empty().append('<option value="6">6</option><option value="8">8</option><option value="12">12</option><option value="24">24</option>');
+      //alert(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch);
+      $("#sel-type5").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch)).change();
+      //$("#selop-5").trigger();
+      $("#sel-type5").change(function () {
+        var str = "";
+        $( "#sel-type5 option:selected" ).each(function() {
+          var datos=$( this ).val();
+          window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch=datos;
+          showResult2();
+        });
+        $("#selop-5").css("display", "none");
+      });
+    }
+      function editarDiasDeTratamiento(){
+        $("#lab-type5").html("Editar duración del tratamiento:");
+        $("#selop-5").css("display", "block");
+        $("#sel-type5").unbind();
+        $("#sel-type5").empty().append('<option value="3">3 días</option><option value="5">5 días</option><option value="7">7 días</option><option value="10">10 días</option><option value="14">14 días</option><option value="21">21 días</option>');
+        //alert(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch);
+        $("#sel-type5").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat)).change();
+        //$("#selop-5").trigger();
+        $("#sel-type5").change(function () {
+          var str = "";
+          $( "#sel-type5 option:selected" ).each(function() {
+            var datos=$( this ).val();
+            window.posibleOptions[0].productos[0].presentaciones[0].dias_trat=datos;
+            showResult2();
+          });
+          $("#selop-5").css("display", "none");
+        });
+      }
+      function editarDosisRequerida(){
+        $("#lab-type5").html("Editar dosis requerida:");
+        $("#selop-5").css("display", "block");
+        $("#sel-type5").unbind();
+        // 5 y 120  80 (mg / Kg / día)
+          $("#sel-type5").empty();
+        for(var i=5;i<=120;i=i+5){
+            $("#sel-type5").append('<option value="'+i+'">'+i+' (mg / Kg / día)</option>');
+        }
+        //alert(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch);
+        $("#sel-type5").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida)).change();
+        //$("#selop-5").trigger();
+        $("#sel-type5").change(function () {
+          var str = "";
+          $( "#sel-type5 option:selected" ).each(function() {
+            var datos=$( this ).val();
+            window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida=datos;
+            showResult2();
+          });
+          $("#selop-5").css("display", "none");
+        });
+      }
+
     function showResult(){
       var filtrados=JSON.parse(JSON.stringify(window.todasLasDrogas));
       filtrados=filterGrupoTerapeutico(filtrados);
@@ -305,32 +382,37 @@
       filtrados=filterDroga(filtrados);
       filtrados=filterPresentacion(filtrados);
       window.posibleOptions=filtrados;
+      showResult2();
       // Aca va los resultados
-      if($('#peso').val()==0){
-        var posologia="<p>Por favor, seleccione el peso del niño para poder calcular la posología </p>";
-      }else{
-        // "dosis_requerida":400,"dosis_ch":24,"vol_envase":10,"prese_mg":400,"prese_ml":1,"dias_trat":0,"form":19}
-        var peso=$('#peso').val();
-        var dosis=window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida;
-        if(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat>0){
-        var duracion='<b>Duración del tratamiento: </b> '+window.posibleOptions[0].productos[0].presentaciones[0].dias_trat+' días<br>';}else{var duracion='';}
-        var presentacion=window.posibleOptions[0].productos[0].presentaciones[0].prese_mg+' mg, '+window.posibleOptions[0].productos[0].presentaciones[0].prese_ml+' ml';
-        var cada_administrar=window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch;
-        var mgXml=window.posibleOptions[0].productos[0].presentaciones[0].prese_mg/window.posibleOptions[0].productos[0].presentaciones[0].prese_ml;
-        var cantidad_administrar=cantidadAAdministrar(peso,cada_administrar,mgXml);
-        if(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat>0){
-          var total_tratamiento=window.posibleOptions[0].productos[0].presentaciones[0].dias_trat*cantidad_administrar*(24/cada_administrar);
-          var envase_utilizar=Math.ceil(total_tratamiento/window.posibleOptions[0].productos[0].presentaciones[0].vol_envase)+" de "+window.posibleOptions[0].productos[0].presentaciones[0].vol_envase+" ml";
-          if(peso>20 && window.posibleOptions[0].productos[0].presentaciones[0].form==1){var envase_utilizar='Conveniente Amoxidal 500 o Dúo';}
-          if(peso>10 && window.posibleOptions[0].productos[0].presentaciones[0].form==7){var envase_utilizar='Conveniente Optamox Dúo';}
-          if(peso>15 && window.posibleOptions[0].productos[0].presentaciones[0].form==8){var envase_utilizar='Conveniente Optamox Dúo';}
-          var envase='<b>Total tratamiento: </b> '+total_tratamiento+'ml <br><b>Envase a utilizar: </b> '+envase_utilizar+'<br>';
-        }else{// Cuando dura cada envase, en tomas y en dias
-          var envase_tomas=Math.floor(window.posibleOptions[0].productos[0].presentaciones[0].vol_envase/cantidad_administrar);
-          var envase_dias=Math.floor(envase_tomas/(24/cada_administrar));
-          var envase='<b>Cada envase dura: </b> '+envase_tomas+' tomas;  <br><b>Cada envase dura: </b> '+envase_dias+' días<br>';
-        }
-        var posologia='<div id="situacion" style=" text-align:left;color: #6a6a6a;">Para niños de <b>'+peso+' kg</b><br><b>Dosis requerida: </b> '+dosis+' (mg / Kg / día)<br>'+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.5em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 15px;"><b>Administrar: </b>'+cantidad_administrar+' ml <small>cada '+cada_administrar+' horas </small><br></span>'+envase+'</div>';
+      }
+      function showResult2(){
+        if($('#peso').val()==0){
+          var posologia="<p>Por favor, seleccione el peso del niño para poder calcular la posología </p>";
+        }else{
+          // "dosis_requerida":400,"dosis_ch":24,"vol_envase":10,"prese_mg":400,"prese_ml":1,"dias_trat":0,"form":19}
+          var peso=$('#peso').val();
+          var dosis=window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida;
+          if(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat>0){
+          var duracion='<b>Duración del tratamiento: </b> '+window.posibleOptions[0].productos[0].presentaciones[0].dias_trat+' días <img src="img/pen.png" alt="" width="15px" style="margin-top: -5px;margin-left: 5px;" onClick="editarDiasDeTratamiento()"><br>';}else{var duracion='';}
+          var presentacion=window.posibleOptions[0].productos[0].presentaciones[0].prese_mg+' mg, '+window.posibleOptions[0].productos[0].presentaciones[0].prese_ml+' ml';
+          var cada_administrar=window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch;
+          var mgXml=window.posibleOptions[0].productos[0].presentaciones[0].prese_mg/window.posibleOptions[0].productos[0].presentaciones[0].prese_ml;
+          var cantidad_administrar=cantidadAAdministrar(peso,cada_administrar,mgXml);
+          if(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat>0){
+            var total_tratamiento=window.posibleOptions[0].productos[0].presentaciones[0].dias_trat*cantidad_administrar*(24/cada_administrar);
+            total_tratamiento=(Math.round(total_tratamiento * 10 ) / 10);
+            var envase_utilizar=Math.ceil(total_tratamiento/window.posibleOptions[0].productos[0].presentaciones[0].vol_envase)+" de "+window.posibleOptions[0].productos[0].presentaciones[0].vol_envase+" ml";
+            if(peso>20 && window.posibleOptions[0].productos[0].presentaciones[0].form==1){var envase_utilizar='Conveniente Amoxidal 500 o Dúo';}
+            if(peso>10 && window.posibleOptions[0].productos[0].presentaciones[0].form==7){var envase_utilizar='Conveniente Optamox Dúo';}
+            if(peso>15 && window.posibleOptions[0].productos[0].presentaciones[0].form==8){var envase_utilizar='Conveniente Optamox Dúo';}
+            var envase='<b>Total tratamiento: </b> '+total_tratamiento+'ml <br><b>Envase a utilizar: </b> '+envase_utilizar+'<br>';
+          }else{// Cuando dura cada envase, en tomas y en dias
+            var envase_tomas=Math.floor(window.posibleOptions[0].productos[0].presentaciones[0].vol_envase/cantidad_administrar);
+            var envase_dias=Math.floor(envase_tomas/(24/cada_administrar));
+            var envase='<b>Cada envase dura: </b> '+envase_tomas+' tomas;  <br><b>Cada envase dura: </b> '+envase_dias+' días<br>';
+          }
+          var posologia='<div id="situacion" style=" text-align:left;color: #6a6a6a;">Para niños de <b>'+peso+' kg</b><br><b>Dosis requerida: </b> '+dosis+' (mg / Kg / día) <img src="img/pen.png" alt="" width="15px" style="margin-top: -5px;margin-left: 5px;" onClick="editarDosisRequerida()"> <br>'+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.5em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 15px;"><b>Administrar: </b>'+cantidad_administrar+' ml <small>cada '+cada_administrar+' horas <img src="img/pen.png" alt="" width="15px" style="margin-top: -5px;margin-left: 5px;" onClick="editarDosisHoras()">  </small><br></span>'+envase+'</div>';
+
       }
       // Fin de los resultados
       var gterapeutico=window.posibleOptions[0].grupo_terapeutico;
@@ -341,7 +423,7 @@
       var acciont='';
       for(ac in window.posibleOptions[0].productos[0].acciones_terapeuticas){if(ac>0){acciont+=', ';}acciont+=window.posibleOptions[0].productos[0].acciones_terapeuticas[ac]}
       var presentacion=window.posibleOptions[0].productos[0].presentaciones[0].presentacion;
-      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentacion: </b>'+presentacion+'</p><p style="text-align: left;"><a href="img/medicamentos/'+window.posibleOptions[0].productos[0].presentaciones[0].prospecto+'" target="_blank"><b style=" color: blue;">Abrir prospecto</b></a></p><h2>Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div></div>');
+      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentacion: </b>'+presentacion+'</p><p style="text-align: left;"></p><h2>Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div></div>');
     }
     function cantidadAAdministrar(peso,cada_administrar,mgXml){
       switch (window.posibleOptions[0].productos[0].presentaciones[0].form) {
@@ -397,7 +479,7 @@
           break
 
       }
-      return Math.round( number * 10 ) / 10;
+      return Math.round(number * 10 ) / 10;
     }
     function abrirProspecto(){
       var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
