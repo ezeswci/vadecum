@@ -40,8 +40,8 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
         	<nav class="navbar navbar-default navbar-fixed-top" >
-            	<button type="button" style="margin:7px;" class="btn btn-default btn-lg" onClick="cambiarPagina('neonatologia.html');">&lsaquo; Volver</button>
-                <a class="btn btn-default ui-link" style="border:none;position: absolute;left: 50%;transform: translate(-50%, 0);"><img src="img/simmer_logo.png" width="54" height="47" style="display:inline-block;"></a>
+            	<button type="button" style="margin:7px;background: #e9e9e9;" class="btn btn-default btn-lg" onClick="cambiarPagina('neonatologia.html');">&lsaquo; Volver</button>
+                <a class="btn btn-default ui-link" style="border:none;position: absolute;left: 50%;transform: translate(-50%, 0);"><img src="img/logor.svg" width="70" style="display:inline-block;"></a>
                 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="border:none;float:right;"><img src="img/menu.png" width="52" height="47"style="display:inline-block;"></a>
             </nav>
 
@@ -111,18 +111,78 @@
                                               <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type" class="ui-select">.</label></div>
                                           </div>
                                         </form>
-                                        <div class="input-line" id="selop-5" style="display:none;">
-                                          <label for="orden" style="margin-top: 9px;" id="lab-type5"></label>
-                                            <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
-                                              <div class="ui-select">
-                                                <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right">
-                                                  <select name="sel-type5" id="sel-type5">
-
-                                                  </select>
+                                        <div id="opPosologia" style="display:none; border: solid #000 2px; background: #f7f2b6; padding: 0px 10px 0px 10px;">
+                                          <h2>Posología</h2>
+                                          <div class="input-line" id="selop-5">
+                                            <label for="orden" style="margin-top: 9px;" id="lab-type5">Dosis requerida:</label>
+                                              <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
+                                                <div class="ui-select">
+                                                  <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right">
+                                                    <select name="sel-type5" id="sel-type5">
+                                                      <option value="5">5 (mg / Kg / día)</option>
+                                                      <option value="10">10 (mg / Kg / día)</option>
+                                                      <option value="15">15 (mg / Kg / día)</option>
+                                                      <option value="20">20 (mg / Kg / día)</option>
+                                                      <option value="25">25 (mg / Kg / día)</option>
+                                                      <option value="30">30 (mg / Kg / día)</option>
+                                                      <option value="35">35 (mg / Kg / día)</option>
+                                                      <option value="40">40 (mg / Kg / día)</option>
+                                                      <option value="45">45 (mg / Kg / día)</option>
+                                                      <option value="50">50 (mg / Kg / día)</option>
+                                                      <option value="55">55 (mg / Kg / día)</option>
+                                                      <option value="60">60 (mg / Kg / día)</option>
+                                                      <option value="65">65 (mg / Kg / día)</option>
+                                                      <option value="70">70 (mg / Kg / día)</option>
+                                                      <option value="75">75 (mg / Kg / día)</option>
+                                                      <option value="80">80 (mg / Kg / día)</option>
+                                                      <option value="85">85 (mg / Kg / día)</option>
+                                                      <option value="90">90 (mg / Kg / día)</option>
+                                                      <option value="95">95 (mg / Kg / día)</option>
+                                                      <option value="100">100 (mg / Kg / día)</option>
+                                                      <option value="105">105 (mg / Kg / día)</option>
+                                                      <option value="110">110 (mg / Kg / día)</option>
+                                                      <option value="115">115 (mg / Kg / día)</option>
+                                                      <option value="120">120 (mg / Kg / día)</option>
+                                                    </select>
+                                                  </div>
                                                 </div>
                                               </div>
-                                            </div>
-                                            <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type" class="ui-select">.</label></div>
+                                              <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type" class="ui-select">.</label></div>
+                                          </div>
+                                          <div class="input-line" id="selop-6">
+                                            <label for="orden" style="margin-top: 9px;" id="lab-type6">Duración del tratamiento:</label>
+                                              <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
+                                                <div class="ui-select">
+                                                  <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right">
+                                                    <select name="sel-type6" id="sel-type6">
+                                                      <option value="3">3 días</option>
+                                                      <option value="5">5 días</option>
+                                                      <option value="7">7 días</option>
+                                                      <option value="10">10 días</option>
+                                                      <option value="14">14 días</option>
+                                                      <option value="21">21 días</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type" class="ui-select">.</label></div>
+                                          </div>
+                                          <div class="input-line" id="selop-7">
+                                            <label for="orden" style="margin-top: 9px;" id="lab-type7">Dosis cada:</label>
+                                              <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
+                                                <div class="ui-select">
+                                                  <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right">
+                                                    <select name="sel-type7" id="sel-type7">
+                                                      <option value="6">6</option>
+                                                      <option value="8">8</option>
+                                                      <option value="12">12</option>
+                                                      <option value="24">24</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="input-label" style="color: transparent;width: 1px;"><label for="sel-type" class="ui-select">.</label></div>
+                                          </div>
                                         </div>
                                         <div class="result_frame" id="result-container" style="display:none;">
                                             <!-- /result_frame -->
@@ -156,58 +216,6 @@
 
     <!-- Menu Toggle Script -->
     <script>
-    /*
-    var todos=[
-      {"grupo_terapeutico":"Antialérgica","productos":[
-        {"nombre_comercial":"Decidex","droga":["Clorfeniramina","Pseudoefedrina"],"acciones_terapeuticas":["Descongestivo","antialérgico"],"img":"decidex_capsulas_2.png","presentaciones":[
-          {"presentacion":"Solución","posologia":"-","prospecto":"DECIDEXGOTASORALESSOLUCION_0.pdf","ninos":false,"dosis_requerida":0.7,"dosis_ch":6,"vol_envase":100,"prese_mg":0.5,"prese_ml":1,"dias_trat":0,"form":11}]}
-      ]},
-      {"grupo_terapeutico":"Antiinfecciosa","productos":[
-        {"nombre_comercial":"Amoxidal","droga":["Amoxicilina"],"acciones_terapeuticas":["Antibiótico"],"img":"amoxidal_500_2.png","presentaciones":[
-          {"presentacion":"250mg Suspensión","posologia":"-","prospecto":"AMOXIDALSusp12917.pdf","ninos":false,"dosis_requerida":80,"dosis_ch":12,"vol_envase":120,"prese_mg":250,"prese_ml":5,"dias_trat":7,"form":1},
-          {"presentacion":"500mg Suspensión","posologia":"-","prospecto":"AMOXIDALSusp12917.pdf","ninos":false,"dosis_requerida":40,"dosis_ch":8,"vol_envase":120,"prese_mg":500,"prese_ml":5,"dias_trat":10,"form":2}]},
-        {"nombre_comercial":"Amoxidal Dúo","droga":["Amoxicilina"],"acciones_terapeuticas":["Antibiótico"],"img":"amoxidal_duo.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"AMOXIDALDUOSusp11887.pdf","ninos":false,"dosis_requerida":90,"dosis_ch":12,"vol_envase":120,"prese_mg":750,"prese_ml":5,"dias_trat":10,"form":3}]},
-        {"nombre_comercial":"Amoxidal Respiratorio","droga":["Amoxicilina","Ambroxol"],"acciones_terapeuticas":["Antibiótico","Mucolítico","expectorante"],"img":"amoxidal_respiratorio.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"AMOXIDALRESPIRATORIOSUSPENSION.pdf","ninos":false,"dosis_requerida":50,"dosis_ch":8,"vol_envase":120,"prese_mg":500,"prese_ml":5,"dias_trat":10,"form":5}]},
-        {"nombre_comercial":"Amoxidal Respiratorio Dúo","droga":["Amoxicilina","Ambroxol"],"acciones_terapeuticas":["Antibiótico","Mucolítico","expectorante"],"img":"amoxidal_duo_resp.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"P_AMOXIDALRESPDUOCompRecSusp12684.pdf","ninos":false,"dosis_requerida":90,"dosis_ch":12,"vol_envase":70,"prese_mg":750,"prese_ml":5,"dias_trat":10,"form":4}]},
-        {"nombre_comercial":"Nixorán","droga":["Nitazoxanida"],"acciones_terapeuticas":["Antiparasitario"],"img":"nixoran_susp.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"NixoranComprimidosSuspension_1.pdf","ninos":false,"dosis_requerida":30,"dosis_ch":12,"vol_envase":60,"prese_mg":100,"prese_ml":5,"dias_trat":3,"form":6}]},
-        {"nombre_comercial":"Optamox","droga":["Amoxicilina","Ac.Clavulánico"],"acciones_terapeuticas":["Antibiótico","Inhibidor betalactámico"],"img":"optamox.png","presentaciones":[
-          {"presentacion":"Suspensión lactantes","posologia":"-","prospecto":"OPTAMOXCOMPRIMIDOSSUSPENSION_0.pdf","ninos":false,"dosis_requerida":25,"dosis_ch":8,"vol_envase":60,"prese_mg":125,"prese_ml":5,"dias_trat":7,"form":7},
-          {"presentacion":"Suspensión pediátrica","posologia":"-","prospecto":"OPTAMOXCOMPRIMIDOSSUSPENSION_0.pdf","ninos":false,"dosis_requerida":50,"dosis_ch":8,"vol_envase":90,"prese_mg":250,"prese_ml":5,"dias_trat":7,"form":8}]},
-        {"nombre_comercial":"Optamox Dúo","droga":["Nitazoxanida"],"acciones_terapeuticas":["Antibiótico","Inhibidor betalactámico"],"img":"optamox_duo.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"OPTAMOXDUOSUSPENSION.pdf","ninos":false,"dosis_requerida":90,"dosis_ch":12,"vol_envase":140,"prese_mg":400,"prese_ml":5,"dias_trat":7,"form":9}]},
-        {"nombre_comercial":"Poviral","droga":["Aciclovir"],"acciones_terapeuticas":["Antiviral"],"img":"poviral_crema_dermica.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"POVIRALSUSPENSIONORAL.pdf","ninos":false,"dosis_requerida":80,"dosis_ch":6,"vol_envase":125,"prese_mg":400,"prese_ml":5,"dias_trat":5,"form":10}]}
-      ]},
-      {"grupo_terapeutico":"Antitérmica","productos":[
-        {"nombre_comercial":"Febratic","droga":["Ibuprofeno"],"acciones_terapeuticas":["Antipirético","Analgésico","Antiinflamatorio"],"img":"febratic_suspension.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"FEBRATICSUSPENSION_0.pdf","ninos":false,"dosis_requerida":40,"dosis_ch":8,"vol_envase":100,"prese_mg":100,"prese_ml":5,"dias_trat":0,"form":15}]},
-        {"nombre_comercial":"Febratic 4%","droga":["Ibuprofeno"],"acciones_terapeuticas":["Antipirético","Analgésico","Antiinflamatorio"],"img":"febratic4PORCIENTO.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"FEBRATIC4PORCIENTOSUSPENSION_0.pdf","ninos":false,"dosis_requerida":40,"dosis_ch":8,"vol_envase":100,"prese_mg":200,"prese_ml":5,"dias_trat":0,"form":16}]}
-      ]},
-      {"grupo_terapeutico":"Antitérmica y analgésica","productos":[
-        {"nombre_comercial":"Termofrén","droga":["Paracetamol"],"acciones_terapeuticas":["Antipirético","Analgésico"],"img":"termofren.png","presentaciones":[
-          {"presentacion":"Gotas","posologia":"-","prospecto":"TERMOFRENGOTASORALES.pdf","ninos":false,"dosis_requerida":60,"dosis_ch":6,"vol_envase":20,"prese_mg":10000,"prese_ml":100,"dias_trat":0,"form":17},
-          {"presentacion":"Solución","posologia":"-","prospecto":"TERMOFRENSolucion12619.pdf","ninos":false,"dosis_requerida":60,"dosis_ch":6,"vol_envase":120,"prese_mg":100,"prese_ml":5,"dias_trat":0,"form":18}]}
-      ]},
-      {"grupo_terapeutico":"Gastroenterológica","productos":[
-        {"nombre_comercial":"Taural","droga":["Ranitidina"],"acciones_terapeuticas":["Antiulceroso"],"img":"taural_300.png","presentaciones":[
-          {"presentacion":"Suspensión","posologia":"-","prospecto":"TAURALSusp12739_0.pdf","ninos":false,"dosis_requerida":50,"dosis_ch":12,"vol_envase":200,"prese_mg":42,"prese_ml":5,"dias_trat":0,"form":20}]}
-      ]},
-      {"grupo_terapeutico":"Micronutrientes","productos":[
-        {"nombre_comercial":"Ostelin ACD","droga":["Vit. A","Vit. C","Vit. D2"],"acciones_terapeuticas":["Suplemento vitamínico"],"img":"ostelin_ACD.png","presentaciones":[
-          {"presentacion":"Solución","posologia":"-","prospecto":"OSTELINACDSolucion12585.pdf","ninos":false,"dosis_requerida":500,"dosis_ch":24,"vol_envase":20,"prese_mg":1000,"prese_ml":0.6,"dias_trat":0,"form":12}]},
-        {"nombre_comercial":"Ostelin F","droga":["Vit. A","Vit. C","Vit. D2","Fluoruro de sodio"],"acciones_terapeuticas":["Suplemento vitamínico"],"img":"ostelin_ACD.png","presentaciones":[
-          {"presentacion":"Solución","posologia":"-","prospecto":"OSTELINFSOLUCION.pdf","ninos":false,"dosis_requerida":500,"dosis_ch":24,"vol_envase":30,"prese_mg":1000,"prese_ml":0.6,"form":13}]},
-        {"nombre_comercial":"Vitalix","droga":["Hierro polimaltosato"],"acciones_terapeuticas":["Antianémico"],"img":"vitalix_gotas.png","presentaciones":[
-          {"presentacion":"Gotas","posologia":"-","prospecto":"VitalixGotas.pdf","ninos":false,"dosis_requerida":4,"dosis_ch":24,"vol_envase":20,"prese_mg":25,"prese_ml":0.5,"dias_trat":0,"form":14}]},
-        {"nombre_comercial":"Ostelin P100","droga":["Ergocalciferol"],"acciones_terapeuticas":["Suplemento vitamínico"],"img":"ostelin_P100.png","presentaciones":[
-          {"presentacion":"Solución","posologia":"-","prospecto":"Ostelin8247.pdf","ninos":false,"dosis_requerida":400,"dosis_ch":24,"vol_envase":10,"prese_mg":400,"prese_ml":1,"dias_trat":0,"form":19}]}
-      ]}
-    ]// Fin grupos */
     window.todasLasDrogas=[{"grupo_terapeutico":"Antialérgica","productos":[{"nombre_comercial":"Decidex","droga":["Clorfeniramina","Pseudoefedrina"],"acciones_terapeuticas":["Descongestivo","antialérgico"],"img":"decidex_capsulas_2.png","presentaciones":[{"presentacion":"Solución","posologia":"-","prospecto":"DECIDEXGOTASORALESSOLUCION_0.pdf","ninos":false,"dosis_requerida":0.7,"dosis_ch":6,"vol_envase":100,"prese_mg":0.5,"prese_ml":1,"dias_trat":0,"form":11}]}]},{"grupo_terapeutico":"Antiinfecciosa","productos":[{"nombre_comercial":"Amoxidal","droga":["Amoxicilina"],"acciones_terapeuticas":["Antibiótico"],"img":"amoxidal_500_2.png","presentaciones":[{"presentacion":"250mg Suspensión","posologia":"-","prospecto":"AMOXIDALSusp12917.pdf","ninos":false,"dosis_requerida":80,"dosis_ch":12,"vol_envase":120,"prese_mg":250,"prese_ml":5,"dias_trat":7,"form":1},{"presentacion":"500mg Suspensión","posologia":"-","prospecto":"AMOXIDALSusp12917.pdf","ninos":false,"dosis_requerida":40,"dosis_ch":8,"vol_envase":120,"prese_mg":500,"prese_ml":5,"dias_trat":10,"form":2}]},{"nombre_comercial":"Amoxidal Dúo","droga":["Amoxicilina"],"acciones_terapeuticas":["Antibiótico"],"img":"amoxidal_duo.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"AMOXIDALDUOSusp11887.pdf","ninos":false,"dosis_requerida":90,"dosis_ch":12,"vol_envase":120,"prese_mg":750,"prese_ml":5,"dias_trat":10,"form":3}]},{"nombre_comercial":"Amoxidal Respiratorio","droga":["Amoxicilina","Ambroxol"],"acciones_terapeuticas":["Antibiótico","Mucolítico","expectorante"],"img":"amoxidal_respiratorio.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"AMOXIDALRESPIRATORIOSUSPENSION.pdf","ninos":false,"dosis_requerida":50,"dosis_ch":8,"vol_envase":120,"prese_mg":500,"prese_ml":5,"dias_trat":10,"form":5}]},{"nombre_comercial":"Amoxidal Respiratorio Dúo","droga":["Amoxicilina","Ambroxol"],"acciones_terapeuticas":["Antibiótico","Mucolítico","expectorante"],"img":"amoxidal_duo_resp.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"P_AMOXIDALRESPDUOCompRecSusp12684.pdf","ninos":false,"dosis_requerida":90,"dosis_ch":12,"vol_envase":70,"prese_mg":750,"prese_ml":5,"dias_trat":10,"form":4}]},{"nombre_comercial":"Nixorán","droga":["Nitazoxanida"],"acciones_terapeuticas":["Antiparasitario"],"img":"nixoran_susp.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"NixoranComprimidosSuspension_1.pdf","ninos":false,"dosis_requerida":30,"dosis_ch":12,"vol_envase":60,"prese_mg":100,"prese_ml":5,"dias_trat":3,"form":6}]},{"nombre_comercial":"Optamox","droga":["Amoxicilina","Ac.Clavulánico"],"acciones_terapeuticas":["Antibiótico","Inhibidor betalactámico"],"img":"optamox.png","presentaciones":[{"presentacion":"Suspensión lactantes","posologia":"-","prospecto":"OPTAMOXCOMPRIMIDOSSUSPENSION_0.pdf","ninos":false,"dosis_requerida":25,"dosis_ch":8,"vol_envase":60,"prese_mg":125,"prese_ml":5,"dias_trat":7,"form":7},{"presentacion":"Suspensión pediátrica","posologia":"-","prospecto":"OPTAMOXCOMPRIMIDOSSUSPENSION_0.pdf","ninos":false,"dosis_requerida":50,"dosis_ch":8,"vol_envase":90,"prese_mg":250,"prese_ml":5,"dias_trat":7,"form":8}]},{"nombre_comercial":"Optamox Dúo","droga":["Nitazoxanida"],"acciones_terapeuticas":["Antibiótico","Inhibidor betalactámico"],"img":"optamox_duo.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"OPTAMOXDUOSUSPENSION.pdf","ninos":false,"dosis_requerida":90,"dosis_ch":12,"vol_envase":140,"prese_mg":400,"prese_ml":5,"dias_trat":7,"form":9}]},{"nombre_comercial":"Poviral","droga":["Aciclovir"],"acciones_terapeuticas":["Antiviral"],"img":"poviral_crema_dermica.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"POVIRALSUSPENSIONORAL.pdf","ninos":false,"dosis_requerida":80,"dosis_ch":6,"vol_envase":125,"prese_mg":400,"prese_ml":5,"dias_trat":5,"form":10}]}]},{"grupo_terapeutico":"Antitérmica","productos":[{"nombre_comercial":"Febratic","droga":["Ibuprofeno"],"acciones_terapeuticas":["Antipirético","Analgésico","Antiinflamatorio"],"img":"febratic_suspension.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"FEBRATICSUSPENSION_0.pdf","ninos":false,"dosis_requerida":40,"dosis_ch":8,"vol_envase":100,"prese_mg":100,"prese_ml":5,"dias_trat":0,"form":15}]},{"nombre_comercial":"Febratic 4%","droga":["Ibuprofeno"],"acciones_terapeuticas":["Antipirético","Analgésico","Antiinflamatorio"],"img":"febratic4PORCIENTO.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"FEBRATIC4PORCIENTOSUSPENSION_0.pdf","ninos":false,"dosis_requerida":40,"dosis_ch":8,"vol_envase":100,"prese_mg":200,"prese_ml":5,"dias_trat":0,"form":16}]}]},{"grupo_terapeutico":"Antitérmica y analgésica","productos":[{"nombre_comercial":"Termofrén","droga":["Paracetamol"],"acciones_terapeuticas":["Antipirético","Analgésico"],"img":"termofren.png","presentaciones":[{"presentacion":"Gotas","posologia":"-","prospecto":"TERMOFRENGOTASORALES.pdf","ninos":false,"dosis_requerida":60,"dosis_ch":6,"vol_envase":20,"prese_mg":10000,"prese_ml":100,"dias_trat":0,"form":17},{"presentacion":"Solución","posologia":"-","prospecto":"TERMOFRENSolucion12619.pdf","ninos":false,"dosis_requerida":60,"dosis_ch":6,"vol_envase":120,"prese_mg":100,"prese_ml":5,"dias_trat":0,"form":18}]}]},{"grupo_terapeutico":"Gastroenterológica","productos":[{"nombre_comercial":"Taural","droga":["Ranitidina"],"acciones_terapeuticas":["Antiulceroso"],"img":"taural_300.png","presentaciones":[{"presentacion":"Suspensión","posologia":"-","prospecto":"TAURALSusp12739_0.pdf","ninos":false,"dosis_requerida":50,"dosis_ch":12,"vol_envase":200,"prese_mg":42,"prese_ml":5,"dias_trat":0,"form":20}]}]},{"grupo_terapeutico":"Micronutrientes","productos":[{"nombre_comercial":"Ostelin ACD","droga":["Vit. A","Vit. C","Vit. D2"],"acciones_terapeuticas":["Suplemento vitamínico"],"img":"ostelin_ACD.png","presentaciones":[{"presentacion":"Solución","posologia":"-","prospecto":"OSTELINACDSolucion12585.pdf","ninos":false,"dosis_requerida":500,"dosis_ch":24,"vol_envase":20,"prese_mg":1000,"prese_ml":0.6,"dias_trat":0,"form":12}]},{"nombre_comercial":"Ostelin F","droga":["Vit. A","Vit. C","Vit. D2","Fluoruro de sodio"],"acciones_terapeuticas":["Suplemento vitamínico"],"img":"ostelin_ACD.png","presentaciones":[{"presentacion":"Solución","posologia":"-","prospecto":"OSTELINFSOLUCION.pdf","ninos":false,"dosis_requerida":500,"dosis_ch":24,"vol_envase":30,"prese_mg":1000,"prese_ml":0.6,"form":13}]},{"nombre_comercial":"Vitalix","droga":["Hierro polimaltosato"],"acciones_terapeuticas":["Antianémico"],"img":"vitalix_gotas.png","presentaciones":[{"presentacion":"Gotas","posologia":"-","prospecto":"VitalixGotas.pdf","ninos":false,"dosis_requerida":4,"dosis_ch":24,"vol_envase":20,"prese_mg":25,"prese_ml":0.5,"dias_trat":0,"form":14}]},{"nombre_comercial":"Ostelin P100","droga":["Ergocalciferol"],"acciones_terapeuticas":["Suplemento vitamínico"],"img":"ostelin_P100.png","presentaciones":[{"presentacion":"Solución","posologia":"-","prospecto":"Ostelin8247.pdf","ninos":false,"dosis_requerida":400,"dosis_ch":24,"vol_envase":10,"prese_mg":400,"prese_ml":1,"dias_trat":0,"form":19}]}]}];// Fin grupos
     // 1 Nombre Comercial; 2 Principio Activo; 3 Grupo terapéutico ; 4 Presentación
     window.selectedFilters=[];//{"pos":1;"type":1;"filter":"name"}
@@ -218,7 +226,8 @@
       while(window.selectedFilters.length>=which){window.selectedFilters.pop();}
       for(var i=4;i>which;i--){$("#selop-"+i).hide();}
       $("#result-container").hide();
-      $("#lab-type"+which).html("Buscar por:");
+      $("#opPosologia").hide();
+      $("#lab-type"+which).html("Ordenar búsqueda por:");
       //console.log(JSON.stringify(window.selectedFilters));
       window.alert1Option=true;
       setFiltersFor(which);
@@ -246,6 +255,7 @@
                 if(selectOptoinsGrupo().length==1){
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"3");
+                  $("#selop-"+nro).hide();
                   return;
                 }
                 break;
@@ -253,6 +263,7 @@
                 if(selectOptoinsDroga().length==1){
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"2");
+                  $("#selop-"+nro).hide();
                   return;
                 }
                 break;
@@ -260,6 +271,7 @@
                 if(selectOptoinsNombre().length==1){
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"1");
+                  $("#selop-"+nro).hide();
                   return;
                 }
                 break;
@@ -297,13 +309,14 @@
                 $("#selop-"+m).hide();
               }
               $("#result-container").hide();
+              $("#opPosologia").hide();
               window.selectedFilters.pop();
           }while(nro!=window.selectedFilters.length);
         }
         window.selectedFilters[window.selectedFilters.length-1].filter=$('#sel-type'+nro).val();
         if(window.selectedFilters.length<4){
           hideToBottom(nro+2);
-          $("#lab-type"+(nro+1)).html("Buscar por:");
+          $("#lab-type"+(nro+1)).html("Ordenar búsqueda por:");
           $("#selop-"+(nro+1)).show();
           setFiltersFor(nro+1);
         }else{
@@ -311,67 +324,47 @@
         }
       }
     }
-    // Para editar
-    // Dosis: window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida
-    // cada_administrar = window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch
-    // dias de tratamiento = window.posibleOptions[0].productos[0].presentaciones[0].dias_trat
-    // sel-type4
+    function startPosologia(){
+      editarDosisHoras();
+      editarDiasDeTratamiento();
+      editarDosisRequerida();
+      $("#opPosologia").show();
+    }
     function editarDosisHoras(){
-      $("#lab-type5").html("Editar Horas:");
-      $("#selop-5").css("display", "block");
-      $("#sel-type5").unbind();
-      $("#sel-type5").empty().append('<option value="6">6</option><option value="8">8</option><option value="12">12</option><option value="24">24</option>');
       //alert(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch);
-      $("#sel-type5").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch)).change();
-      //$("#selop-5").trigger();
-      $("#sel-type5").change(function () {
+      //$("#sel-type7").off('change');
+      $("#sel-type7").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch)).change();
+      $("#sel-type7").change(function () {
         var str = "";
-        $( "#sel-type5 option:selected" ).each(function() {
-          var datos=$( this ).val();
+        $("#sel-type7 option:selected").each(function() {
+          var datos=$(this).val();
           window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch=datos;
           showResult2();
         });
-        $("#selop-5").css("display", "none");
       });
     }
       function editarDiasDeTratamiento(){
-        $("#lab-type5").html("Editar duración del tratamiento:");
-        $("#selop-5").css("display", "block");
-        $("#sel-type5").unbind();
-        $("#sel-type5").empty().append('<option value="3">3 días</option><option value="5">5 días</option><option value="7">7 días</option><option value="10">10 días</option><option value="14">14 días</option><option value="21">21 días</option>');
-        //alert(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch);
-        $("#sel-type5").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat)).change();
-        //$("#selop-5").trigger();
-        $("#sel-type5").change(function () {
+        //$("#sel-type6").off('change');
+        $("#sel-type6").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat)).change();
+        $("#sel-type6").change(function () {
           var str = "";
-          $( "#sel-type5 option:selected" ).each(function() {
+          $( "#sel-type6 option:selected" ).each(function() {
             var datos=$( this ).val();
             window.posibleOptions[0].productos[0].presentaciones[0].dias_trat=datos;
             showResult2();
           });
-          $("#selop-5").css("display", "none");
         });
       }
       function editarDosisRequerida(){
-        $("#lab-type5").html("Editar dosis requerida:");
-        $("#selop-5").css("display", "block");
-        $("#sel-type5").unbind();
-        // 5 y 120  80 (mg / Kg / día)
-          $("#sel-type5").empty();
-        for(var i=5;i<=120;i=i+5){
-            $("#sel-type5").append('<option value="'+i+'">'+i+' (mg / Kg / día)</option>');
-        }
-        //alert(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch);
+        //$("#sel-type5").off('change');
         $("#sel-type5").val(String(window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida)).change();
         //$("#selop-5").trigger();
         $("#sel-type5").change(function () {
-          var str = "";
           $( "#sel-type5 option:selected" ).each(function() {
             var datos=$( this ).val();
             window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida=datos;
             showResult2();
           });
-          $("#selop-5").css("display", "none");
         });
       }
 
@@ -383,6 +376,7 @@
       filtrados=filterPresentacion(filtrados);
       window.posibleOptions=filtrados;
       showResult2();
+      startPosologia();
       // Aca va los resultados
       }
       function showResult2(){
@@ -393,7 +387,7 @@
           var peso=$('#peso').val();
           var dosis=window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida;
           if(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat>0){
-          var duracion='<b>Duración del tratamiento: </b> '+window.posibleOptions[0].productos[0].presentaciones[0].dias_trat+' días <img src="img/pen.png" alt="" width="15px" style="margin-top: -5px;margin-left: 5px;" onClick="editarDiasDeTratamiento()"><br>';}else{var duracion='';}
+          var duracion='<b>Duración del tratamiento: </b> '+window.posibleOptions[0].productos[0].presentaciones[0].dias_trat+' días<br>';}else{var duracion='';}
           var presentacion=window.posibleOptions[0].productos[0].presentaciones[0].prese_mg+' mg, '+window.posibleOptions[0].productos[0].presentaciones[0].prese_ml+' ml';
           var cada_administrar=window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch;
           var mgXml=window.posibleOptions[0].productos[0].presentaciones[0].prese_mg/window.posibleOptions[0].productos[0].presentaciones[0].prese_ml;
@@ -405,13 +399,13 @@
             if(peso>20 && window.posibleOptions[0].productos[0].presentaciones[0].form==1){var envase_utilizar='Conveniente Amoxidal 500 o Dúo';}
             if(peso>10 && window.posibleOptions[0].productos[0].presentaciones[0].form==7){var envase_utilizar='Conveniente Optamox Dúo';}
             if(peso>15 && window.posibleOptions[0].productos[0].presentaciones[0].form==8){var envase_utilizar='Conveniente Optamox Dúo';}
-            var envase='<b>Total tratamiento: </b> '+total_tratamiento+'ml <br><b>Envase a utilizar: </b> '+envase_utilizar+'<br>';
+            var envase='<b>Total tratamiento: </b> '+total_tratamiento+' ml <br><b>Envase a utilizar: </b> '+envase_utilizar+'<br>';
           }else{// Cuando dura cada envase, en tomas y en dias
             var envase_tomas=Math.floor(window.posibleOptions[0].productos[0].presentaciones[0].vol_envase/cantidad_administrar);
             var envase_dias=Math.floor(envase_tomas/(24/cada_administrar));
             var envase='<b>Cada envase dura: </b> '+envase_tomas+' tomas;  <br><b>Cada envase dura: </b> '+envase_dias+' días<br>';
           }
-          var posologia='<div id="situacion" style=" text-align:left;color: #6a6a6a;">Para niños de <b>'+peso+' kg</b><br><b>Dosis requerida: </b> '+dosis+' (mg / Kg / día) <img src="img/pen.png" alt="" width="15px" style="margin-top: -5px;margin-left: 5px;" onClick="editarDosisRequerida()"> <br>'+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.5em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 15px;"><b>Administrar: </b>'+cantidad_administrar+' ml <small>cada '+cada_administrar+' horas <img src="img/pen.png" alt="" width="15px" style="margin-top: -5px;margin-left: 5px;" onClick="editarDosisHoras()">  </small><br></span>'+envase+'</div>';
+          var posologia='<div id="situacion" style=" text-align:left;line-height: 2em;"><p>Para niños de <b>'+peso+' kg</b><br><b>Dosis requerida: </b> '+dosis+' (mg / Kg / día) <br>'+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.5em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 1em;"><b>Administrar: </b>'+cantidad_administrar+' ml <small>cada '+cada_administrar+' horas </small><br></span>'+envase+'</p></div>';
 
       }
       // Fin de los resultados
@@ -423,7 +417,7 @@
       var acciont='';
       for(ac in window.posibleOptions[0].productos[0].acciones_terapeuticas){if(ac>0){acciont+=', ';}acciont+=window.posibleOptions[0].productos[0].acciones_terapeuticas[ac]}
       var presentacion=window.posibleOptions[0].productos[0].presentaciones[0].presentacion;
-      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentacion: </b>'+presentacion+'</p><p style="text-align: left;"></p><h2>Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div></div>');
+      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentacion: </b>'+presentacion+'</p><p style="text-align: left;"></p><h2 style="text-decoration: underline;">Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div></div>');
     }
     function cantidadAAdministrar(peso,cada_administrar,mgXml){
       switch (window.posibleOptions[0].productos[0].presentaciones[0].form) {
@@ -495,7 +489,7 @@
     }
     function selectedFilterFor(nro,filter){
       window.selectedFilters.push({"pos":nro,"type":filter,"filter":null});
-      $("#lab-type"+nro).html("Filtro: "+nombreDeFiltro(filter).toUpperCase()+' <img src="img/pen.png" alt="" width="20px" style="margin-top: -10px;">');
+      $("#lab-type"+nro).html(nombreDeFiltro(filter)+' <small style="text-decoration: underline;color: #9E9E9E;">(Editar)</small>');
       posibleOptionsFunction(nro);
     }
     function posibleOptionsFunction(nro){

@@ -40,8 +40,8 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
           <nav class="navbar navbar-default navbar-fixed-top" >
-                <button type="button" style="margin:7px;" class="btn btn-default btn-lg" onClick="cambiarPagina('pediatria.html');">&lsaquo; Volver</button>
-                <a class="btn btn-default ui-link" style="border:none;position: absolute;left: 50%;transform: translate(-50%, 0);"><img src="img/simmer_logo.png" width="54" height="47" style="display:inline-block;"></a>
+                <button type="button" style="margin:7px;background: #e9e9e9;" class="btn btn-default btn-lg" onClick="cambiarPagina('pediatria.html');">&lsaquo; Volver</button>
+                <a class="btn btn-default ui-link" style="border:none;position: absolute;left: 50%;transform: translate(-50%, 0);"><img src="img/logor.svg" width="70" style="display:inline-block;"></a>
                 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="border:none;float:right;"><img src="img/menu.png" width="52" height="47"style="display:inline-block;"></a>
             </nav>
 
@@ -247,7 +247,7 @@
       while(window.selectedFilters.length>=which){window.selectedFilters.pop();}
       for(var i=4;i>which;i--){$("#selop-"+i).hide();}
       $("#result-container").hide();
-      $("#lab-type"+which).html("Buscar por:");
+      $("#lab-type"+which).html("Ordenar búsqueda por:");
       //console.log(JSON.stringify(window.selectedFilters));
       window.alert1Option=true;
       setFiltersFor(which);
@@ -275,6 +275,7 @@
                 if(selectOptoinsGrupo().length==1){
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"3");
+                  $("#selop-"+nro).hide();
                   return;
                 }
                 break;
@@ -282,6 +283,7 @@
                 if(selectOptoinsDroga().length==1){
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"2");
+                  $("#selop-"+nro).hide();
                   return;
                 }
                 break;
@@ -289,6 +291,7 @@
                 if(selectOptoinsNombre().length==1){
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"1");
+                  $("#selop-"+nro).hide();
                   return;
                 }
                 break;
@@ -332,7 +335,7 @@
         window.selectedFilters[window.selectedFilters.length-1].filter=$('#sel-type'+nro).val();
         if(window.selectedFilters.length<4){
           hideToBottom(nro+2);
-          $("#lab-type"+(nro+1)).html("Buscar por:");
+          $("#lab-type"+(nro+1)).html("Ordenar búsqueda por::");
           $("#selop-"+(nro+1)).show();
           setFiltersFor(nro+1);
         }else{
@@ -358,7 +361,7 @@
       var acciont='';
       for(ac in window.posibleOptions[0].productos[0].acciones_terapeuticas){if(ac>0){acciont+=', ';}acciont+=window.posibleOptions[0].productos[0].acciones_terapeuticas[ac]}
       var presentacion=window.posibleOptions[0].productos[0].presentaciones[0].presentacion;
-      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentacion: </b>'+presentacion+'</p><p style="text-align: left;"><b style=" color: blue;" onclick="abrirProspecto();">Abrir prospecto</b></p><h2>Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div></div>');
+      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentacion: </b>'+presentacion+'</p><h2>Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div></div>');
     }
     function abrirProspecto(){
       var src="img/medicamentos/"+window.posibleOptions[0].productos[0].presentaciones[0].prospecto;
@@ -390,7 +393,7 @@
     }
     function selectedFilterFor(nro,filter){
       window.selectedFilters.push({"pos":nro,"type":filter,"filter":null});
-      $("#lab-type"+nro).html("Filtro: "+nombreDeFiltro(filter).toUpperCase()+' <img src="img/pen.png" alt="" width="20px" style="margin-top: -10px;">');
+      $("#lab-type"+nro).html(nombreDeFiltro(filter)+' <small style="text-decoration: underline;color: #9E9E9E;">(Editar)</small>');
       posibleOptionsFunction(nro);
     }
     function posibleOptionsFunction(nro){
