@@ -8,16 +8,31 @@
 	font-weight: 400;
 	src: url('OpenSans-Regular.ttf');
 }*/
-body * {
+body {
 	font-family: 'Open Sans', sans-serif !important;
 	font-weight: 400;
 }
+
 @media (max-width:340px){
 	body {
   		zoom: 85%;
 		}
-
 	}
+.imgfront{
+		max-height: 50vh;
+		margin-top: 5%;
+		margin-bottom: 15%;
+		width: 60%;
+	}
+@media (max-width:340px){
+	.imgfront{
+		max-height: 50vh;
+		margin-top: 5%;
+		margin-bottom: 5%;
+		width: 45%;
+	}
+
+		}
 strong, b {
 	font-weight: bold !important;
 }

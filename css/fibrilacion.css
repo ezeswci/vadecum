@@ -281,16 +281,16 @@ select{
 }
 /* Nuevo Simmers */
 .bkg-green{
-	/*background:#4AB239;*/
+	color:#444142;
 }
 .txt-green{
-	/*color:#04142b;*/
+	color:#444142;
 }
 .bkg-blue{
 	background:#007C9A;
 }
 .txt-blue{
-	/*color:#007C9A;*/
+	color:#444142;
 }
 .txt-sector{
     width: 100%;
