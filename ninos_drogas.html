@@ -55,7 +55,7 @@
                                     <div class="input-line">
                                         <div data-role="fieldcontain">
                                             <label for="peso">Peso (Kg)</label>
-                                            <input type="range" name="peso" id="peso" value="0" min="2" max="40"  step="0.1">
+                                            <input type="range" name="peso" id="peso" value="0" min="2" max="40"  step="1">
                                         </div>
                                     </div>
                                  </form>
@@ -173,10 +173,10 @@
                                                 <div class="ui-select">
                                                   <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right">
                                                     <select name="sel-type7" id="sel-type7">
-                                                      <option value="6">6</option>
-                                                      <option value="8">8</option>
-                                                      <option value="12">12</option>
-                                                      <option value="24">24</option>
+                                                      <option value="6">6 horas</option>
+                                                      <option value="8">8 horas</option>
+                                                      <option value="12">12 horas</option>
+                                                      <option value="24">24 horas</option>
                                                     </select>
                                                   </div>
                                                 </div>
@@ -252,7 +252,7 @@
         if(!isInFilter(op)){
             switch (op) {
                 case 3:
-                if(selectOptoinsGrupo().length==1){
+                if(selectOptoinsGrupo().length==1 || selectOptoinsNombre().length==1){// Elije automatico hasta frasco
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"3");
                   $("#selop-"+nro).hide();
@@ -260,7 +260,7 @@
                 }
                 break;
                 case 2:
-                if(selectOptoinsDroga().length==1){
+                if(selectOptoinsDroga().length==1 || selectOptoinsNombre().length==1){// Elije automatico hasta frasco
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"2");
                   $("#selop-"+nro).hide();
@@ -325,10 +325,21 @@
       }
     }
     function startPosologia(){
-      editarDosisHoras();
-      editarDiasDeTratamiento();
-      editarDosisRequerida();
-      $("#opPosologia").show();
+      if(window.posibleOptions[0].productos[0].presentaciones[0].form<=10){
+        editarDosisHoras();
+        editarDiasDeTratamiento();
+        editarDosisRequerida();
+        $("#selop-5").show();
+        $("#selop-6").show();
+        $("#selop-7").show();
+        $("#opPosologia").show();
+      }else{
+        editarDosisHoras();
+        $("#selop-5").hide();
+        $("#selop-6").hide();
+        $("#selop-7").show();
+        $("#opPosologia").show();
+      }
     }
     function editarDosisHoras(){
       //alert(window.posibleOptions[0].productos[0].presentaciones[0].dosis_ch);
@@ -395,7 +406,50 @@
           if(window.posibleOptions[0].productos[0].presentaciones[0].dias_trat>0){
             var total_tratamiento=window.posibleOptions[0].productos[0].presentaciones[0].dias_trat*cantidad_administrar*(24/cada_administrar);
             total_tratamiento=(Math.round(total_tratamiento * 10 ) / 10);
+            // ---- Comienzo esepciones volumenes
+            if(window.posibleOptions[0].productos[0].presentaciones[0].form==1 || window.posibleOptions[0].productos[0].presentaciones[0].form==5 || window.posibleOptions[0].productos[0].presentaciones[0].form==10){// Exepcion volumenes
+              if(total_tratamiento>90){
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=120;
+              }else{
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=90;
+              }
+            }
+            if(window.posibleOptions[0].productos[0].presentaciones[0].form==2){// Exepcion volumenes
+              if(total_tratamiento>90){
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=120;
+              }else{
+                if(total_tratamiento>60){
+                  window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=90;
+                }else{
+                  window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=60;
+                }
+              }
+            }
+            if(window.posibleOptions[0].productos[0].presentaciones[0].form==3){
+              if(total_tratamiento>70){
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=120;
+              }else{
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=70;
+              }
+            }
+            if(window.posibleOptions[0].productos[0].presentaciones[0].form==8){
+              if(total_tratamiento>60){
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=90;
+              }else{
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=60;
+              }
+            }
+            if(window.posibleOptions[0].productos[0].presentaciones[0].form==9){
+              if(total_tratamiento>70){
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=140;
+              }else{
+                window.posibleOptions[0].productos[0].presentaciones[0].vol_envase=70;
+              }
+            }
+            // ---- Fin esepciones volumenes
             var envase_utilizar=Math.ceil(total_tratamiento/window.posibleOptions[0].productos[0].presentaciones[0].vol_envase)+" de "+window.posibleOptions[0].productos[0].presentaciones[0].vol_envase+" ml";
+            // Que muestra en los productos form del 1 al 10
+            // 4 6 7 normales
             if(peso>20 && window.posibleOptions[0].productos[0].presentaciones[0].form==1){var envase_utilizar='Conveniente Amoxidal 500 o Dúo';}
             if(peso>10 && window.posibleOptions[0].productos[0].presentaciones[0].form==7){var envase_utilizar='Conveniente Optamox Dúo';}
             if(peso>15 && window.posibleOptions[0].productos[0].presentaciones[0].form==8){var envase_utilizar='Conveniente Optamox Dúo';}
@@ -405,7 +459,16 @@
             var envase_dias=Math.floor(envase_tomas/(24/cada_administrar));
             var envase='<b>Cada envase dura: </b> '+envase_tomas+' tomas;  <br><b>Cada envase dura: </b> '+envase_dias+' días<br>';
           }
-          var posologia='<div id="situacion" style=" text-align:left;line-height: 2em;"><p>Para niños de <b>'+peso+' kg</b><br><b>Dosis requerida: </b> '+dosis+' (mg / Kg / día) <br>'+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.5em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 1em;"><b>Administrar: </b>'+cantidad_administrar+' ml <small>cada '+cada_administrar+' horas </small><br></span>'+envase+'</p></div>';
+          if(window.posibleOptions[0].productos[0].presentaciones[0].form!=19){
+            var pos_tomas=cantidad_administrar+' ml';
+          }else{
+            if(cantidad_administrar==1){
+              var pos_tomas=cantidad_administrar+' gota';
+            }else{
+              var pos_tomas=cantidad_administrar+' gotas';
+            }
+          }
+          var posologia='<div id="situacion" style=" text-align:left;line-height: 2em;"><p>Para niños de <b>'+peso+' kg</b><br><b>Dosis requerida: </b> '+dosis+' (mg / Kg / día) <br>'+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.5em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 1em;"><b>Administrar: </b>'+pos_tomas+' <small>cada '+cada_administrar+' horas </small><br></span>'+envase+'</p></div>';
 
       }
       // Fin de los resultados
@@ -442,9 +505,9 @@
           var number= second/(mgXml);
           break;
         case 12:case 13:
-          var first=peso*window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(24/cada_administrar);
+          var first=window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(24/cada_administrar);// Xq no es peso * etc
           var second=Math.min(first, 4000);
-          var number= second/(mgXml);
+          var number= second/(mgXml);// mgXml es presentacion?
           break;
         case 14:
           var first=peso*window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(24/cada_administrar);
@@ -462,14 +525,14 @@
           var number= second/(mgXml);
           break
         case 19:
-          var first=peso*window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(24/cada_administrar);
+          var first=window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(24/cada_administrar);  // Xq no es peso * etc
           var second=Math.min(first, 3000);
-          var number= second/(mgXml);
+          var number= Math.max(second/(mgXml),1);
           break
         case 20:
           var first=peso*window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(24/cada_administrar);
-          var second=Math.min(first, 50);
-          var number= second/(mgXml);
+          if(first>50){first=300/(24/cada_administrar);} // Xq tan raro...
+          var number= first/(mgXml);
           break
 
       }
@@ -569,13 +632,16 @@
 
     /* Fin de sector de filtros */
     function setOptionsFor(nro){
+      var flag=0;
        $("#sel-type"+nro).empty().append('<option value="0">' +  nombreDeFiltro(window.selectedFilters[nro-1].type) + '</option>');
        switch(window.selectedFilters[nro-1].type) {
              case "2": // Droga
                  var opc=selectOptoinsDroga();
+                 var flag=1;
                  break;
              case "3": // Grupo terapeutico
                   var opc= selectOptoinsGrupo();
+                  var flag=1;
                  break;
              case "4": // Presentacion
                      var opc= selectOptoinsPresentacion();
@@ -586,7 +652,8 @@
       for (op in opc){
         $("#sel-type"+nro).append('<option value="'+opc[op]+'">'+opc[op]+ '</option>');
       }
-      if(opc.length==1){
+      var opc2=selectOptoinsNombre();
+      if(opc.length==1 || (flag==1 && opc2.length==1)){
         $("#sel-type"+nro).val(opc[0]).change();// Si tiene una sola opcion elige esa!!
       }else{
         $("#sel-type"+nro).val(0).change();

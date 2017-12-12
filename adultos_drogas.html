@@ -272,7 +272,7 @@
         if(!isInFilter(op)){
             switch (op) {
                 case 3:
-                if(selectOptoinsGrupo().length==1){
+                if(selectOptoinsGrupo().length==1 || selectOptoinsNombre().length==1){// Elije automatico hasta frasco
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"3");
                   $("#selop-"+nro).hide();
@@ -280,7 +280,7 @@
                 }
                 break;
                 case 2:
-                if(selectOptoinsDroga().length==1){
+                if(selectOptoinsDroga().length==1 || selectOptoinsNombre().length==1){// Elije automatico hasta frasco
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"2");
                   $("#selop-"+nro).hide();
@@ -473,13 +473,16 @@
 
     /* Fin de sector de filtros */
     function setOptionsFor(nro){
+      var flag=0;
        $("#sel-type"+nro).empty().append('<option value="0">' +  nombreDeFiltro(window.selectedFilters[nro-1].type) + '</option>');
        switch(window.selectedFilters[nro-1].type) {
              case "2": // Droga
                  var opc=selectOptoinsDroga();
+                 var flag=1;
                  break;
              case "3": // Grupo terapeutico
                   var opc= selectOptoinsGrupo();
+                  var flag=1;
                  break;
              case "4": // Presentacion
                      var opc= selectOptoinsPresentacion();
@@ -490,7 +493,8 @@
       for (op in opc){
         $("#sel-type"+nro).append('<option value="'+opc[op]+'">'+opc[op]+ '</option>');
       }
-      if(opc.length==1){
+      var opc2=selectOptoinsNombre();
+      if(opc.length==1 || (flag==1 && opc2.length==1)){
         $("#sel-type"+nro).val(opc[0]).change();// Si tiene una sola opcion elige esa!!
       }else{
         $("#sel-type"+nro).val(0).change();
