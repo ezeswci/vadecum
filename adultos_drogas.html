@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>RCP</title>
+    <title>vademecum</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -686,7 +686,7 @@
                 if(selectOptoinsNombre().length==1){
                   if(window.alert1Option){window.alert1Option=false;alert("Única opción disponible, si desea cambiar el filtro, cambia un filtro superior");}
                   selectedFilterFor(nro,"1");
-                  $("#selop-"+nro).hide();
+                  //$("#selop-"+nro).hide();
                   return;
                 }
                 break;
@@ -899,7 +899,7 @@
         $("#sel-type"+nro).append('<option value="'+opc[op]+'">'+opc[op]+ '</option>');
       }
       var opc2=selectOptoinsNombre();
-      if(opc.length==1 || (flag==1 && opc2.length==1)){
+      if((opc.length==1 || (flag==1 && opc2.length==1)) && window.selectedFilters[nro-1].type!=1){
         $("#sel-type"+nro).val(opc[0]).change();// Si tiene una sola opcion elige esa!!
       }else{
         $("#sel-type"+nro).val(0).change();
