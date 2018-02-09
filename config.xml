@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.CenVademecum"
-        android-versionCode="180"
+        android-versionCode="185"
         version   = "1.1.3">
 
     <name>Dosis medicamentos VPR</name>
@@ -35,7 +35,6 @@
 
 	<!-- Record Audio -->
 	<!-- Core plugins -->
-    <plugin name="com.cmackay.plugins.googleanalytics" source="npm" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<!-- Define app icon for each platform. -->
 	<icon src="img/icon.png" />
