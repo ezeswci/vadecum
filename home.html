@@ -4,9 +4,9 @@
 <head>
 
     <meta charset="utf-8">
+	   <script src="cordova.js" type="text/javascript"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script src="cordova.js" type="text/javascript"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  	<meta name="viewport" content="initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -30,48 +30,42 @@
 
 </head>
 
-<body style="zoom:100%;">
-
+<body>
     <div id="wrapper">
-
         <!-- Sidebar -->
         <script src="js/menu.js"></script>
-
         <!-- Page Content -->
-        <div id="page-content-wrapper" style="background: #fcf59d;" >
+        <div id="page-content-wrapper" style="background: linear-gradient(#FEF69C, #F3D858);" >
         	<nav class="navbar navbar-default navbar-fixed-top" >
                 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="border:none;float:right;"><img src="img/menu.png" width="52" height="47"style="display:inline-block;"></a>
             </nav>
-            <div style="vertical-align: middle;">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div id="muestra_texto" style="width: 100%;">
-                            <img src="img/vpr.svg" alt="" class="img-responsive center-block imgfront">
-                            <a href="#" onclick="cambiarPagina('neonatologia.html');" class="btn btn-default ui-link" id="menu-toggle" style="margin-left:4%;margin-top: 0px;height: 40px;padding-top: 10px;width: 45%;color: #FFF;background: #99989d;font-weight: 700;font-size: 14px;">NIÑOS</a><a href="#" onclick="cambiarPagina('pediatria.html');" class="btn btn-default ui-link" id="menu-toggle" style="margin-left:4%;margin-top: 0px;height: 40px;padding-top: 10px;width: 45%;color: #FFF;background: #99989d;font-weight: 700;font-size: 14px;">ADULTOS</a>
-                            <p style="
-                                        text-align: center;
-                                        margin-top: 20px;
-                                        font-size: 12px;
-                                        position: relative;
-                                        color: #7c7c7c;">"Una herramienta de consulta de productos farmacéuticos" <span style="
-                                        font-style: italic;
-                                        font-weight: lighter;
-                                        position: absolute;
-                                        width: 80%;
-                                        margin-left: 10%;
-                                        top: 105%;
-                                        left: 0px;
-                                        text-align: right;
-                                    "> - Vademecum app</span> </p>
-                        <img src="img/logor.svg" width="25%" alt="" class="img-responsive center-block" style="margin-top: 15%;m;margin-bottom: 10%;">
-                        </div>
-                    </div>
+            <img src="img/r.svg" style="position: absolute;left: -5px;height: 100%;top: 0;opacity: 0.06;">
+            <div class="col-lg-12 vertical-align: middle">
+                <div id="muestra_texto" style="width: 100%;">
+                    <img src="img/vpr.svg" alt="" class="img-responsive center-block imgfront">
+                    <a href="#" onclick="cambiarPagina('neonatologia.html');" class="btn btn-default ui-link" id="menu-toggle" style="margin-left:4%;margin-top: 0px;height: 40px;padding-top: 10px;width: 45%;color: #FFF;background: #737277;font-weight: 700;font-size: 14px;">NIÑOS</a><a href="#" onclick="cambiarPagina('pediatria.html');" class="btn btn-default ui-link" id="menu-toggle" style="margin-left:4%;margin-top: 0px;height: 40px;padding-top: 10px;width: 45%;color: #FFF;background: #737277;font-weight: 700;font-size: 14px;">ADULTOS</a>
+                    <p style="
+                                text-align: center;
+                                margin-top: 20px;
+                                font-size: 12px;
+                                position: relative;
+                                color: #7c7c7c;">"Una herramienta de consulta de productos farmacéuticos" <span style="
+                                font-style: italic;
+                                font-weight: lighter;
+                                position: absolute;
+                                width: 80%;
+                                margin-left: 10%;
+                                top: 105%;
+                                left: 0px;
+                                text-align: right;
+                            "> - Vademecum app</span> </p>
+                <img src="img/logor2.svg" width="30%" alt="" class="img-responsive center-block" style="margin-top: 15%;m;margin-bottom: 10%;">
                 </div>
             </div>
             <p style="position: absolute;    bottom: 2%;    width: 100%;    text-align: center;    color: #7c7c7c;">Esta app no reemplaza el criterio médico </p>
-        </div>
         <!-- /#page-content-wrapper -->
 
+        </div>
     </div>
     <!-- /#wrapper -->
 	<!-- Propios -->
