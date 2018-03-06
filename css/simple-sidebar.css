@@ -76,6 +76,8 @@
 #page-content-wrapper {
     width: 100%;
     position: absolute;
+    top: 0px;
+    left: 0px;
     /*padding: 15px;*/
 	padding-top:80px;
 	min-height:100vh;
