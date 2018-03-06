@@ -32,10 +32,6 @@
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 
 
-    <preference name="StatusBarBackgroundColor" value="#000000" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarStyle" value="blackopaque" />
-    <plugin name="cordova-plugin-statusbar" />
 
 	<!-- Record Audio -->
 	<!-- Define app icon for each platform. -->
