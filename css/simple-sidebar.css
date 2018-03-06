@@ -38,9 +38,9 @@
 #sidebar-wrapper ul{
 	padding-left:0px;
 	width: 80%;
-    height: 95vh;
-    min-height: 95%;
-    background-color: #f8f8f8;
+  padding-bottom: 80px;
+  min-height: 100%;
+  background-color: #f7f2b6;
 }
 #sidebar-wrapper li{
   padding-top: 10px;
