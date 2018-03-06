@@ -308,8 +308,6 @@ select{
 }
 .navbar-default{
 	padding-top:17px;
-    top: -10px;
-    left: 0px;
 }
 .ui-content p {
     color: #6a6a6a;
