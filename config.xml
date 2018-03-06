@@ -32,6 +32,10 @@
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 
 
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <plugin name="cordova-plugin-statusbar" />
 
 	<!-- Record Audio -->
 	<!-- Define app icon for each platform. -->
@@ -55,6 +59,7 @@
     <icon src="img/res/icons/ios/icon-76@2x.png" width="152" height="152"/>
     <icon src="img/res/icons/ios/icon-167.png" width="167" height="167"/>
     <icon src="img/res/icons/ios/icon-83.5@2x.png" width="167" height="167"/>
+    <icon src="img/res/icons/ios/icon-1024.png" width="1024" height="1024" />
     <!--  Legacy portrait  -->
     <splash src="img/res/screens/ios/Default~iphone.png" width="320" height="480"/>
     <splash src="img/res/screens/ios/Default@2x~iphone.png" width="640" height="960"/>
