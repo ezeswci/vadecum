@@ -2,13 +2,17 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.CenVademecum"
-        android-versionCode="195"
-        version   = "1.1.6">
+        android-versionCode="200"
+        version   = "1.1.7">
 
-    <name>Dosis medicamentos VPR</name>
-
+    <name>Dosis VPR</name>
+    <!-- Ojo A:com.CenVademecum I:com.vademecum -->
     <description>
-        Vademecum, herramienta de consulta de productos farmacéuticos, prospectos de remedios.
+      Vademécum Posológico Roemmers (VPR)
+      Es una herramienta para médicos que simplifica el cálculo de las dosis de los medicamentos que los profesionales prescriben de productos del laboratorio Roemmers.
+      VPR permite determinar para la población pediátrica las dosis según peso corporal y/o edad postnatal en meses y años de manera fácil. El mantener la mayor exactitud reduce el riesgo de adoptar tratamientos inefectivos o sobre tratamientos.
+      Los valores correspondientes a las distintas dosis por kg de peso corporal se presentan tal como resulta el cálculo, queda a consideración del médico la necesidad de corregirlos según redondeo.
+      VPR posee además información posológica para medicamentos de adultos e información abreviada de cada droga.
     </description>
 
     <author href="http://www.cenpec.com.ar" email="info@cenpec.com.ar">
@@ -32,7 +36,7 @@
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 
 
-
+    <plugin name="cordova-plugin-firebase" spec="0.1.25" />
 	<!-- Record Audio -->
 	<!-- Define app icon for each platform. -->
 	<icon src="img/icon.png" />
@@ -80,6 +84,7 @@
     <splash density="port-xxhdpi" src="img/res/screens/android/splash-port-xxhdpi.png"/>
     <splash density="port-xxxhdpi" src="img/res/screens/android/splash-port-xxxhdpi.png"/>
     <!--  Landscape  -->
+    <resource-file src="GTM-5MFXXXX.json" target="assets/containers/GTM-5MFXXXX.json" />
   </platform>
 
 

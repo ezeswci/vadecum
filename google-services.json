@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1060360896151",
+    "firebase_url": "https://vademecum-13670.firebaseio.com",
+    "project_id": "vademecum-13670",
+    "storage_bucket": "vademecum-13670.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060360896151:android:9a778a53358b3008",
+        "android_client_info": {
+          "package_name": "com.CenVademecum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060360896151-d6b455qqa98vlsqb5sgbilnun3nabn9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtiR58EEtAj6PYjdWPiTZmGwC7rKli6qo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
