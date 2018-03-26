@@ -1,6 +1,7 @@
 function cambiarPagina(pagina)
 {
-	window.FirebasePlugin.logEvent("select_content", {content_type: "page_view", item_id: pagina});
+	//window.FirebasePlugin.logEvent("select_content", {content_type: "page_view", item_id: pagina});
+	console.log("Pagina");
 	window.location=pagina;
 /*var xmlhttp;
 if (window.XMLHttpRequest)

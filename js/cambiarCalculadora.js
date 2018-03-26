@@ -1,6 +1,9 @@
-$( document ).ready(function() {
-    window.FirebasePlugin.setAnalyticsCollectionEnabled(true);
-});
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    // Now safe to use device APIs
+      window.FirebasePlugin.setAnalyticsCollectionEnabled(true);
+}
 function cambiarCalculadora(pagina)
 {
   window.FirebasePlugin.logEvent("select_content", {content_type: "page_view", item_id: pagina});
