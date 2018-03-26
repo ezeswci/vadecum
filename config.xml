@@ -36,7 +36,7 @@
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 
 
-    <plugin name="cordova-plugin-firebase" spec="0.1.25" />
+    <plugin name="cordova-plugin-google-analytics" source="npm" />
 	<!-- Record Audio -->
 	<!-- Define app icon for each platform. -->
 	<icon src="img/icon.png" />
@@ -84,7 +84,6 @@
     <splash density="port-xxhdpi" src="img/res/screens/android/splash-port-xxhdpi.png"/>
     <splash density="port-xxxhdpi" src="img/res/screens/android/splash-port-xxxhdpi.png"/>
     <!--  Landscape  -->
-    <resource-file src="google-services.json" target="assets/containers/google-services.json" />
   </platform>
 
 

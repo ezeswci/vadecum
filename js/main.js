@@ -9,7 +9,11 @@ function initPage (t) {
 		$("html, body").animate({ scrollTop: 0 }, 750);
 	});
 }
-
+document.addEventListener('deviceready', function () {
+    // Analytics para club House
+	window.ga.startTrackerWithId('UA-70907455-6');// Analytics para vademecum
+	window.ga.trackView('Ev start');
+}, false);
 function init () {
 	$(window).on('pagebeforeshow', function (e) {
 		initPage($(e.target));
