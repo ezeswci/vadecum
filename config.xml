@@ -84,7 +84,7 @@
     <splash density="port-xxhdpi" src="img/res/screens/android/splash-port-xxhdpi.png"/>
     <splash density="port-xxxhdpi" src="img/res/screens/android/splash-port-xxxhdpi.png"/>
     <!--  Landscape  -->
-    <resource-file src="GTM-5MFXXXX.json" target="assets/containers/GTM-5MFXXXX.json" />
+    <resource-file src="google-services.json" target="assets/containers/google-services.json" />
   </platform>
 
 
