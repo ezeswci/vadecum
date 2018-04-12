@@ -2,7 +2,7 @@ function cambiarPagina(pagina)
 {
 	//window.FirebasePlugin.logEvent("select_content", {content_type: "page_view", item_id: pagina});
 	window.ga.trackEvent('Cambio de pantalla', 'Pantalla', pagina.substring(0, pagina.length - 5), 1);
-	window.ga.trackView('Pantalla: '+pagina.substring(0, pagina.length - 5));
+  window.ga.trackView('Pantalla: '+pagina.substring(0, pagina.length - 5));
 	window.location=pagina;
 /*var xmlhttp;
 if (window.XMLHttpRequest)

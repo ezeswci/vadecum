@@ -169,7 +169,7 @@
                                           </div>
                                         </form>
                                         <div id="opPosologia" style="display:none;     border: 1px solid #999; border-radius: 5px; background: #FEF69C; padding: 0px 10px 0px 10px;">
-                                          <h2 style="text-align: center;font-weight: 600;">Posología</h2>
+                                          <h2 style="text-align: center;font-weight: 600;">Posología sugerida</br><small>(Modificar según criterio médico)</small></h2>
                                           <div class="input-line" id="selop-8">
                                             <label for="orden" style="margin-top: 9px;" id="lab-type8">Edad:</label>
                                               <div class="input-switch drogas" style="width: 98%;max-width: 98%;">
@@ -963,7 +963,7 @@
               }
             }
           }
-          var poso='</div></div><div class="result_container" style="min-width:220px;width: 100%;text-align: left;margin: 20px auto;"><h2>Prospecto <small>(Posología)</small></h2></h2><p>'+window.posibleOptions[0].productos[0].presentaciones[0].posologia+'</p>';
+          var poso='</div></div><div class="result_container" style="min-width:220px;width: 100%;text-align: left;margin: 20px auto;"><h2 style="text-align: center;margin-top: 10px;">Prospecto <small>(Posología)</small></h2></h2><p>'+window.posibleOptions[0].productos[0].presentaciones[0].posologia+'</p>';
           if(cantidad_administrar!=-1 && cantidad_administrar!=-2 && cantidad_administrar!=-3){
             if(dosis>0){var dosis_requerida='<b>Dosis requerida: </b> '+dosis+' (mg/kg/día) <br>';}else{var dosis_requerida='';}
             if(dosis>0 && (window.posibleOptions[0].productos[0].presentaciones[0].form==12 || window.posibleOptions[0].productos[0].presentaciones[0].form==19)){var dosis_requerida='<b>Dosis requerida: </b> '+dosis+' (U.I./día) <br>';}else{var dosis_requerida='';}
@@ -978,7 +978,7 @@
             // duracion del tratamiento maxima recomendada 5 dias
             if(window.posibleOptions[0].productos[0].presentaciones[0].form==28){cada_administrar="12 a 24";}
             if(window.posibleOptions[0].productos[0].presentaciones[0].form<=20 || window.posibleOptions[0].productos[0].presentaciones[0].form==31 || window.posibleOptions[0].productos[0].presentaciones[0].form==33){var para='<p>Para niños de <b>'+peso+' kg</b><br>';}else{var para='<p>Para niños de <b>'+determinarEdad()+'</b><br>'}
-            var posologia='<div id="situacion" style=" text-align:left;line-height: 2em;">'+para+dosis_requerida+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.3em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 1em;"><b>Administrar: </b>'+pos_tomas+' <small>cada '+cada_administrar+' horas </small><br></span>'+envase+'</p>'+aviso+'</div></div></div><div class="result_container" style="min-width:220px;width: 100%;text-align: left;margin: 20px auto;"><h2>Prospecto <small>(Posología)</small></h2></h2><p>'+window.posibleOptions[0].productos[0].presentaciones[0].posologia+'</p>';
+            var posologia='<div id="situacion" style=" text-align:left;line-height: 2em;">'+para+dosis_requerida+duracion+'<b>Presentación: </b> '+presentacion+'<br><span style="font-size: 1.3em;color:#333333;margin-top: 10px;margin-bottom: 10px;display: block;line-height: 1em;"><b>Administrar: </b>'+pos_tomas+' <small>cada '+cada_administrar+' horas </small><br></span>'+envase+'</p>'+aviso+'</div></div></div><div class="result_container" style="min-width:220px;width: 100%;text-align: left;margin: 20px auto;"><h2 style="text-align: center;margin-top: 10px;">Prospecto <small>(Posología)</small></h2></h2><p>'+window.posibleOptions[0].productos[0].presentaciones[0].posologia+'</p>';
           }else if(cantidad_administrar==-1){
             if(window.edad==0){
               var posologia="<p>Dosis no determinada para menores de 1 año</p></div>"+poso; // Lo cierro el div aca para poder poner la posologia separada arriba
@@ -1000,7 +1000,7 @@
       var acciont='';
       for(ac in window.posibleOptions[0].productos[0].acciones_terapeuticas){if(ac>0){acciont+=', ';}acciont+=window.posibleOptions[0].productos[0].acciones_terapeuticas[ac]}
       var presentacion=window.posibleOptions[0].productos[0].presentaciones[0].presentacion;
-      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentación: </b>'+presentacion+'</p><p style="text-align: left;"></p><h2 style="text-decoration: underline;">Posología</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div>');
+      $("#result-container").show().html('<div class="result_container" style="min-width:220px;width: 100%;text-align: left;"><div class="result_title" style="color:#333333;">'+gterapeutico+'</div><h1><div style=" width: 60%; display: inline-block; ">'+dnombre+'</div><div style=" width: 40%; display: inline-block;"><img src="img/medicamentos/'+img+'" width="100%" style="display:inline-block;"></div></h1><p style="text-align: left;"><b>Principio activos: </b>'+ppactivo+'</p><p style="text-align: left;"><b>Acción terapéutica: </b>'+acciont+'</p><p style="text-align: left;"><b>Presentación: </b>'+presentacion+'</p><p style="text-align: left;"></p></div><div class="result_container" style="min-width:220px;width: 100%;text-align: left;margin-top: 10px;"><h2 style="text-align: center;margin-top: 10px;">Resultados de los cálculos de dosificación</h2> <div id="situacion" style="text-align: justify;color: #6a6a6a;">'+posologia+'</div>');
     }
     function cantidadAAdministrar(peso,cada_administrar,mgXml){
       switch (window.posibleOptions[0].productos[0].presentaciones[0].form) {
