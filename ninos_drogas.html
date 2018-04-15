@@ -967,7 +967,7 @@
           if(cantidad_administrar!=-1 && cantidad_administrar!=-2 && cantidad_administrar!=-3){
             if(dosis>0){var dosis_requerida='<b>Dosis requerida: </b> '+dosis+' (mg/kg/día) <br>';}else{var dosis_requerida='';}
             if(dosis>0 && (window.posibleOptions[0].productos[0].presentaciones[0].form==12 || window.posibleOptions[0].productos[0].presentaciones[0].form==19)){var dosis_requerida='<b>Dosis requerida: </b> '+dosis+' (U.I./día) <br>';}else{var dosis_requerida='';}
-            if(window.posibleOptions[0].productos[0].presentaciones[0].form==12 && window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida>1000){var aviso='<p style="line-height: 1em;"><small style="color: red;">Tener en cuenta que con dosis superiores a 0,6 ml se supera la dosis diaria de vitamina A (liposoluble), con la sabidad de crear estados de hipervitaminosis. Para tratamientos de estados deficitarios de vitamina D especificos contar. </small></p>';}
+            if(window.posibleOptions[0].productos[0].presentaciones[0].form==12 && window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida>1000){var aviso='<p style="line-height: 1em;"><small style="color: red;">Tener en cuenta que con dosis superiores a 0,6 ml se supera la dosis diaria de vitamina A (liposoluble), con la sabida de crear estados de hipervitaminosis. Para tratamientos de estados deficitarios de vitamina D especificos contar con Ostelin P100 y familia Raquiferol. </small></p>';}
             else if(window.posibleOptions[0].productos[0].presentaciones[0].form==11 || window.posibleOptions[0].productos[0].presentaciones[0].form==24 || window.posibleOptions[0].productos[0].presentaciones[0].form==25 || window.posibleOptions[0].productos[0].presentaciones[0].form==32){var aviso='<p style="line-height: 1em;"><small>Duración del tratamiento máxima recomendada: 5 días</small></p>';}
             else if(window.posibleOptions[0].productos[0].presentaciones[0].form==8 || window.posibleOptions[0].productos[0].presentaciones[0].form==9){var aviso='<p style="line-height: 1em;"><small>Conservar en heladera (2-8 C centígrados) y descartar a 7 días de confeccionada la suspensión</small></p>';}
             else if(window.posibleOptions[0].productos[0].presentaciones[0].form==29){var aviso='<p style="line-height: 1em;"><small><b>Dosis inicial:</b> Una aplicación en cada fosa nasal, una vez por día (dosis diaria total 100 mcg).</br>En algunos casos puede ser necesaria una aplicación en cada fosa nasal, dos veces por día (dosisdiaria total 200 mcg).</br><b>Dosis de mantenimiento:</b> Una vez logrado el control de los síntomas, la dosis debe ser de unaaplicación en cada fosa nasal, una vez por día (dosis diaria total 100 mcg).</br>La <b>dosis diaria máxima</b> no debe exceder las dos aplicaciones en cada fosa nasal por día (dosis diariatotal 200 mcg).</small></p>';}
@@ -1053,9 +1053,13 @@
           var number=Math.round(window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(500));  // 1 gota equivale a 400 U.I.
           console.log("number 19: "+number);
           break
-        case 20:
+        case 20: // Taural
+        // =SI(mg/dosis<=(300/(24/cada_administrar));mg/dosis;300/(24/cada_administrar))
+          //mg/dosis= dosis_requerida*peso/(24/cada_administrar)
           var first=peso*window.posibleOptions[0].productos[0].presentaciones[0].dosis_requerida/(24/cada_administrar);
-          if(first>50){first=300/(24/cada_administrar);} // Xq tan raro...
+          if(!(first<=(300/(24/cada_administrar)))){
+            first=300/(24/cada_administrar);
+          } // Xq tan raro...
           var number= first/(mgXml);
           break
           case 21:
